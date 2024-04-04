@@ -1,7 +1,7 @@
 {
   "name": "csn",
   "type": "product",
-  "version": "9.3.3",
+  "version": "9.2.0",
   "build": {
     "scss": {
       "dist": "app/css",

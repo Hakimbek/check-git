@@ -1,0 +1,1 @@
+{"version":3,"file":"detectUserTypeMiddleware.js","sourceRoot":"","sources":["../../../../src/common/detectUserTypeMiddleware.ts"],"names":[],"mappings":"AAAA,MAAM,qBAAqB,GAAG,OAAO,CAAC,mCAAmC,CAAC,CAAC;AAE3E,MAAM,CAAC,OAAO,GAAG,CAAC,GAAG,EAAE,IAAI,EAAE,IAAI,EAAE,EAAE;IACjC,GAAG,CAAC,QAAQ,GAAG,qBAAqB,CAAC,WAAW,CAAC,GAAG,CAAC,CAAC;IAEtD,IAAI,EAAE,CAAC;AACX,CAAC,CAAC"}
