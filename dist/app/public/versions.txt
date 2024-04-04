@@ -5,4 +5,4 @@ bmb.identity:2.5.10
 bmb.research:2.17.8
 velvet:1.9.85
 wk.ccm:1.2.0-DEV.CSN-12050-research-migration-to-npm-package.7
-csn:9.3.3
+csn:9.2.0

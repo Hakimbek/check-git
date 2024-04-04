@@ -1,0 +1,75 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DOCUMENT_TYPES_ID_MAPPING = void 0;
+exports.DOCUMENT_TYPES_ID_MAPPING = {
+    // ITA/LIR, ITAR/RAIR, ITR/RIR
+    'law/law': 'ID Internal Revenue Code',
+    'regulation/regulation': 'ID Regulation',
+    'law/pending-legislation': 'ID Internal Revenue Code',
+    'law/statute': 'ID Internal Revenue Code',
+    // Commentary
+    'agency-publication/commentary': 'ID Commentary APFF',
+    'explanation/explanation': 'ID Commentary CCH',
+    'finder/bibliography': 'ID Commentary CTF',
+    // Government Documents
+    'value-add/key-references': 'ID Government Documents',
+    'value-add/related-matter': 'ID Concordance',
+    'agency-publication/advice': 'ID Advice',
+    'agency-publication/brochure': 'ID Brochure',
+    'agency-publication/budget-plan': 'ID Budget Plan',
+    'agency-publication/bulletin': 'ID Bulletin',
+    'agency-publication/circular': 'ID Circular',
+    'agency-publication/guide': 'ID Guide',
+    'agency-publication/manual': 'ID Manual',
+    'agency-publication/memorandum': 'ID Memorandum',
+    'agency-publication/newsletter': 'ID Newsletter',
+    'agency-publication/notice': 'ID Agency Notice',
+    'agency-publication/pamphlet': 'ID Pamphlet',
+    'agency-publication/paper': 'ID Paper',
+    'agency-publication/policy': 'ID Policy',
+    'agency-publication/publication': 'ID Publication',
+    'agency-publication/report': 'ID Report',
+    'agency-publication/technical-program': 'ID Technical Program',
+    'form': 'ID Form',
+    'ruling/notice': 'ID Notice',
+    'ruling/order': 'ID Order',
+    'ruling/ruling': 'ID Ruling',
+    // Technical Interpretations
+    'ruling/interpretation': 'ID Interpretation',
+    'ruling/opinion': 'ID Opinion Letters',
+    // Case Law
+    'case-law/case': 'ID Case',
+    // History
+    'explanation/history-note': 'ID History Notes',
+    'committee-report/explanatory_memorandum': 'ID Explanatory Notes',
+    // Treatise
+    'explanation/treatise': 'ID Treatise',
+    // Standalone and other types
+    'act/act': 'ID Act',
+    'agency-publication/note': 'ID Copyright',
+    'committee-report/committee-report': 'ID Committee Report',
+    'explanation/caselaw-analysis': 'ID Case Comment',
+    'explanation/legislative-summary': 'ID Tax Table',
+    'explanation/prologue': 'ID Prologue',
+    'explanation/webinar': 'ID Webinar',
+    'finder/citator': 'ID Citator',
+    'finder/topical-index': 'ID Topical Index',
+    'international-agreement/agreement': 'ID Agreement',
+    'international-agreement/convention': 'ID Convention',
+    'international-agreement/model-convention': 'ID Model Convention',
+    'international-agreement/official-explanation': 'ID Official Explanation',
+    'international-agreement/protocol': 'ID Protocol',
+    'international-agreement/treaty': 'ID Treaty',
+    'introductory-material/about-the-author': 'ID Author',
+    'news/digest': 'ID News Digest',
+    'news/article': 'ID News Article',
+    'pending-legislation/pending-legislation': 'ID Proposed Amendment',
+    'periodical/newsletter': 'ID Periodical',
+    'practice-aid/chart': 'ID SmartChart',
+    'regulation/order': 'ID Order',
+    'regulation/proposed-regulation': 'ID Proposed Amendment',
+    'topical-landing-page/topical-landing-page': 'ID Topic',
+    'explanation/answer': 'ID Smartcharts Proxy',
+    'practice-aid/decision-tree': 'ID ITA Interpreter',
+};
+//# sourceMappingURL=documentTypesIdMapping.js.map
