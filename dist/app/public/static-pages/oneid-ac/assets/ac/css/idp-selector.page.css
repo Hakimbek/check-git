@@ -1,0 +1,91 @@
+.wk-header .wk-logo-large {
+    height: 1.8125rem;
+}
+
+.wk-login-screen .wk-header .wk-product-brand {
+    font-size: 24px;
+    font-weight: 500;
+    color: #85bc20;
+}
+
+.wk-login-screen .wk-header .wk-product-brand .product-app-name-extra {
+    font-style: italic;
+    color: #a4cd58;
+}
+
+.wk-header .wk-header-container {
+    max-width: 75rem;
+}
+
+.product-brand::after {
+    content: '\00AE';
+    font-size: .6667em;
+    position: relative;
+    top: -.3em;
+}
+
+.authorization-form-wrapper {
+    margin: 0 auto 10px;
+}
+
+.authorization-form {
+    background-color: #ededed;
+    padding: 15px 19px;
+    clear: both;
+    color: #474747;
+    font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+    margin: 0 -17px;
+}
+
+.wk-button-full:hover:not([disabled]) {
+    background-color: #409bd2;
+    color: #fff;
+}
+
+.wk-button-primary.wk-button-full {
+    font-weight: 100;
+}
+
+.authorization-form .label,
+.authorization-form input {
+    margin-bottom: 10px;
+}
+
+.authorization-form .label {
+    font-size: 16px;
+}
+
+.authorization-form .hint {
+    font-size: 14px;
+    padding-bottom: 3px;
+}
+
+.wk-login-screen .wk-login-layout-options .wk-copyright-text {
+    color: #474747;
+}
+
+.wk-login-screen .wk-login-layout-options .wk-copyright-text a {
+    font-weight: 700;
+}
+
+@media (min-width: 37.5rem) {
+    .authorization-form-wrapper {
+        width: 470px;
+    }
+
+    .wk-login-screen .wk-login-layout-options .wk-login-footer {
+        width: 500px;
+    }
+
+    .wk-header>.wk-header-container {
+        padding: .5625rem 1rem;
+    }
+
+    .wk-header .wk-logo {
+        margin: .71875rem 0;
+    }
+
+    .wk-button-primary.wk-button-full {
+        margin-bottom: 7px;
+    }
+}

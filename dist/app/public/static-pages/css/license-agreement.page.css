@@ -1,0 +1,122 @@
+.wk-header .wk-logo-large {
+    height: 1.8125rem;
+}
+
+.wk-login-screen .wk-header .wk-product-brand {
+    font-size: 24px;
+    font-weight: 500;
+    color: #85bc20;
+}
+
+.wk-login-screen .wk-header .wk-product-brand .product-app-name-extra {
+    font-style: italic;
+    color: #a4cd58;
+}
+
+.wk-header .wk-header-container {
+    max-width: 118.75rem;
+}
+
+.product-brand::after {
+    content: '\00AE';
+    font-size: .6667em;
+    position: relative;
+    top: -.3em;
+}
+
+.license-form-wrapper {
+    margin: 0 auto 10px;
+}
+
+.license-form {
+    background-color: #ededed;
+    padding: 16px;
+    clear: both;
+    color: black;
+    font-family: Franziska, "Times New Roman", Times, serif;
+    margin-right: -15px;
+    margin-left: -15px;
+    position: relative;
+}
+
+.license-form h4 {
+    margin: 0;
+    line-height: 1.1;
+}
+
+.license-agreement-content {
+    background-color: white;
+    overflow-y: scroll;
+    min-height: 400px;
+    height: 50vh;
+    width: 100%;
+    border-width: 0;
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.loading-spinner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 47px 16px 61px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-spinner.fa-spinner {
+    font-size: 45px;
+}
+
+.btn-footer {
+    text-align: center;
+}
+
+.wk-button-success {
+    font-size: 12px;
+    padding: .75rem .5625rem .6875rem;
+    background-color: #C2DE90;
+    color: #000000;
+    line-height: 1;
+    transition: background-color .1s ease-out;
+    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    display: inline-block;
+}
+
+.license-agree-checkbox {
+    margin-top: 8px;
+    display: inline-block;
+    font-size: 13px;
+    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: #757575;
+}
+
+.wk-button-success:hover:not(.disabled) {
+    color: #000000;
+    background-color: #85BC20;
+}
+
+.wk-button-success.disabled {
+    opacity: .3;
+    pointer-events: none;
+    cursor: default;
+}
+
+@media (min-width: 37.5rem) {
+    .license-form-wrapper {
+        width: 580px;
+    }
+
+    .wk-header>.wk-header-container {
+        padding: .5625rem 1rem;
+    }
+
+    .wk-header .wk-logo {
+        margin: .71875rem 0;
+    }
+}

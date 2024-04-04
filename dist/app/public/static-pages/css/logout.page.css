@@ -1,0 +1,190 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+}
+
+a[disabled] {
+    opacity: .3;
+    cursor: default;
+}
+.secondary-link {
+    color: #005B92;
+}
+a.wk-button-full:hover:not([disabled]) {
+    background-color: #409bd2;
+    color: #fff;
+}
+
+[class*=wk-icon-] {
+    width: auto!important;
+}
+
+a.wk-button-primary.wk-button-full {
+    display: inline-block;
+    width: 100%;
+    font-size: .9375rem;
+    padding: .75rem .5625rem .6875rem;
+    background-color: #007ac3;
+    line-height: 1;
+    color: #fff;
+    font-family: "Fira Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+a.wk-button-primary.wk-button-full:active:hover {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.logout-page .logout-form-wrapper{
+    width:580px;
+    margin:0 auto 10px
+}
+
+.logout-page .logout-form-wrapper .logout-form{
+    background-color:#ededed;
+    padding:16px;clear:both;
+    color:#474747;
+    font-family:Franziska,"Times New Roman",Times,serif;
+}
+
+.logout-page .logout-form-wrapper .logout-form h4{
+    margin:16px 0 0 20px;
+}
+
+.logout-page .logout-form-wrapper .logout-form p{
+    margin:20px 0 0 20px;
+    font-size:14px;
+}
+
+.logout-page .logout-form-wrapper .logout-form .btn-footer{
+    margin-top:55px;
+    text-align: center;
+}
+
+.wk-header .wk-logo-large {
+    height: 1.8125rem;
+}
+
+.wk-login-footer .wk-copyright-text {
+    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.wk-login-screen .wk-header .wk-product-brand {
+    font-size: 24px;
+    font-weight: 500;
+    color: #85bc20;
+}
+
+.wk-login-screen .wk-button-primary.loading {
+    background-size: 70px 70px;
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    animation: progress-bar-stripes 2s linear infinite;
+}
+    
+@keyframes progress-bar-stripes{
+    0% {
+    background-position: 70px 0;
+    }
+    100% {
+    background-position: 0 0;
+    }
+}
+
+.product-brand::after{
+    content: '\00AE';
+    font-size: 0.6667em;
+    position: relative;
+    top: -0.3em;
+}
+
+.wk-login-screen .wk-header .wk-product-brand .product-app-name-extra {
+    font-style: italic;
+    color: #a4cd58;
+}
+
+.wk-button, button {
+    font-size: .9375rem;
+    padding: .75rem .5625rem .6875rem;
+}
+
+.wk-header>.wk-header-container {
+    max-width: 118.75rem;
+}
+
+.csn-trial-period-banner .trial-active-message, .csn-trial-period-banner .trial-expired-message {
+    display: none;
+}
+
+.csn-trial-period-banner.trial-is-active {
+    background-color: #005b92;
+}
+
+.csn-trial-period-banner.trial-is-active .trial-active-message {
+    display: block;
+}
+
+.csn-trial-period-banner.trial-is-expired {
+    background-color: #e5202e;
+}
+
+.csn-trial-period-banner.trial-is-expired .trial-expired-message {
+    display: block;
+}
+
+.csn-trial-period-banner .trial-banner-message p {
+    text-align: center;
+    padding: .9375rem 0;
+    color: #fff;
+    font-family: "Fira Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: 400;
+}
+
+.csn-trial-period-banner .trial-banner-message a {
+    color: #f5c780;
+}
+
+@media (max-width:480px){
+    .logout-page .logout-form-wrapper{
+        width:320px
+    }
+    
+    .logout-page .logout-form-wrapper .logout-form{
+        max-width:320px
+    }
+}
+
+@media (min-width: 37.5rem){
+    a.wk-button-primary.wk-button-full {
+        margin-bottom: 0;
+    }
+
+    .wk-header .wk-logo {
+        margin-top: 0.71875rem;
+        margin-right: 0px;
+        margin-bottom: 0.71875rem;
+        margin-left: 0px;
+    }
+
+    .wk-header>.wk-header-container {
+        padding: .5625rem 1rem;
+        padding-top: 0.5625rem;
+        padding-right: 1rem;
+        padding-bottom: 0.5625rem;
+        padding-left: 1rem;
+    }
+}

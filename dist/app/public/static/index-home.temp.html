@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8" />
+        <title><$= defaultPageTitle $></title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=0" />
+        <base href="/" />
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="cleartype" content="on" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=0, viewport-fit=cover" />
+        <meta name="description" content="<$= defaultMetaDescription $>" />
+        <meta name="robots" content="<$= defaultIndexFollowRule $>" />
+
+        <meta name="application-name" content="CCH AnswerConnect" />
+        <meta name="apple-mobile-web-app-title" content="CCH AnswerConnect" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+
+        <meta name="application-name" content="CCH AnswerConnect" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-square70x70logo" content="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand-wheel.svg" />
+        <meta
+            name="msapplication-square150x150logo"
+            content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+        <meta
+            name="msapplication-wide310x150logo"
+            content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+        <meta
+            name="msapplication-square310x310logo"
+            content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+        <link rel="icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/favicon.png" />
+        <link rel="apple-touch-icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+        <link rel="apple-touch-startup-image" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+        <link rel="canonical" href="<$= defaultCanonicalUrl $>" />
+
+        <script>
+            window.prerenderReady = false;
+        </script>
+        <$ if (!isPrerenderBot) { $>
+        <script defer src="<$= appcuesScript $>"></script>
+        <$ } $> <$- prefetchResources $>
+
+        <script type="text/javascript" src="static/vars<$= varsEtag $>"></script>
+
+        <!-- <$- bmb.scripts("csn", true) $> -->
+        <!-- @TODO return it later to speed up loading process (PROD mode only) -->
+        <style>
+            .async-hide {
+                /*opacity: 0 !important */
+            }
+        </style>
+        <script>
+            var googleServicesSettings = JSON.parse('<$- JSON.stringify(googleServices) $>');
+            if (googleServicesSettings.tagManager.enabled && googleServicesSettings.optimize.enabled) {
+                var containerOptions = {};
+                containerOptions[googleServicesSettings.optimize.container] = true;
+                (function (a, s, y, n, c, h, i, d, e) {
+                    s.className += ' ' + y;
+                    h.start = 1 * new Date();
+                    h.end = i = function () {
+                        s.className = s.className.replace(RegExp(' ?' + y), '');
+                    };
+                    (a[n] = a[n] || []).hide = h;
+                    setTimeout(function () {
+                        i();
+                        h.end = null;
+                    }, c);
+                    h.timeout = c;
+                })(window, document.documentElement, 'async-hide', 'dataLayer', 2000, containerOptions);
+            }
+        </script>
+
+        <!-- Google Analytics -->
+        <script>
+            if (googleServicesSettings.analytics.enabled) {
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    (i[r] =
+                        i[r] ||
+                        function () {
+                            (i[r].q = i[r].q || []).push(arguments);
+                        }),
+                        (i[r].l = 1 * new Date());
+                    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m);
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                ga('create', googleServicesSettings.analytics.id, {
+                    siteSpeedSampleRate: 100,
+                    cookieDomain: window.location.hostname,
+                });
+                ga('require', googleServicesSettings.optimize.container);
+            }
+        </script>
+        <!-- End Google Analytics -->
+
+        <!-- Google Tag Manager -->
+        <script>
+            if (googleServicesSettings.tagManager.enabled) {
+                (function (w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' });
+                    var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s),
+                        dl = l != 'dataLayer' ? '&l=' + l : '';
+                    j.async = true;
+                    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                    f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', googleServicesSettings.tagManager.id);
+            }
+        </script>
+        <!-- End Google Tag Manager -->
+
+        <!-- Set info about browser -->
+        <script>
+            document.documentElement.setAttribute('data-browser', navigator.userAgent);
+        </script>
+        <!-- End Set info about browser -->
+
+        <!-- app scripts below: -->
+    <link href="static/css/styles_f47e472e5fb895872883.css" rel="stylesheet"></head>
+
+    <body id="body" class="<$= userType $>">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe
+                src="https://www.googletagmanager.com/ns.html?id=<$= googleServices.tagManager.id $>"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <div id="react-app" data-application-version="<$= applicationVersion $>"></div>
+        <div id="tooltip-root"></div>
+        <div id="popup-root"></div>
+        <div id="sidebar-root"></div>
+    <script defer src="static/js/polyfills_f47e472e5fb895872883.js"></script><script defer src="static/js/react-app_f47e472e5fb895872883.js"></script></body>
+</html>

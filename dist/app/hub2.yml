@@ -1,0 +1,303 @@
+containers:
+    gateway:
+        image: group-docker.wolterskluwer.io/gateway:1.21.2
+        environment:
+            # for configuration values explanation see https://bitbucket.wolterskluwer.io/projects/GATEWAY/repos/gateway/browse
+            ##### General gateway config #####
+            COOKIE_SAMESITE: None
+            REDIS_SSL: on
+            REDIS_HOST: master.reri76045fxpnbk.bavg8t.use1.cache.amazonaws.com
+            REDIS_AUTH: { type: ssm, path: /REDIS_AUTH_GATEWAY/DEV }
+            REDIS_KEY_PREFIX: dev
+            HEALTH_CHECK_TIMEOUT: 5s
+            HEALTH_CHECK_SELF_INTERVAL: 10
+            HEALTH_CHECK_DEPENDENCIES_INTERVAL: 10
+            ENABLE_DIAGNOSTICS: false
+            response_headers: "Content-Security-Policy=default-src 'self' 'unsafe-inline' cdn.wolterskluwer.io fast.appcues.com researchhelp.cch.com wss://*.appcues.net; frame-src 'self' mailto: *"
+
+            # Permanent redirect to non-www host
+            redirect_www_replacement: $1
+            redirect_www_regex: ^(https?://)www\.
+            redirect_www_type: permanent
+            redirect_www_include_host: true
+
+
+            ##### SSO config #####
+            SSO_DETECT_USER_CLAIM_CHANGE: sub
+            SSO_FORBID_INVALID_SESSION: true
+            SSO_STATE_TTL: 259200
+            LOGIN_SESSION_TTL: 28800
+            USER_IDLE_LOGOUT: 0
+            SSO_MULTIPLE_IDP_SESSIONS: on
+            SSO_PASS_QUERY_PARAMETERS: WAF,referer
+            SSO_STRICT_IDP: on
+            SSO_VALIDATE_AUDIENCE: false
+
+
+            ##### IDPs config #####
+            # OneID (default) IDP config
+            idp_OneID: https://login.intelliconnect.stg.cch.com/
+            idp_OneID_client_id: TAA.AnswerConnect.Dev
+            idp_OneID_client_secret: { type: ssm, path: /IDP_ONEID_CLIENT_SECRET/DEV }
+            idp_OneID_validator_id: GAPasswordValidator
+            idp_OneID_expose_token_iss: iss
+            idp_OneID_expose_token_amr: amr
+            idp_OneID_expose_token_sub: sub
+            idp_OneID_expose_token_authentication_authority: authentication_authority
+            idp_OneID_authorization_correlationid_param: X-Correlation-ID
+            idp_OneID_logout: single-logout
+            idp_OneID_end_session_endpoint: https://login.intelliconnect.stg.cch.com/as/authorization.oauth2?client_id=TAA.AnswerConnect.Dev&response_type=code&logout=true
+            idp_OneID_relogin_parameters: logout_uri=https://answerconnect-dev.psdidevenvs.com/static/logout&redirect_uri=https://answerconnect-dev.psdidevenvs.com/static/logout
+
+            # Axcess IDP config
+            idp_AxcessIDP: https://test4login.cchaxcess.com
+            idp_AxcessIDP_client_id: TAA.AnswerConnect.Test4
+            idp_AxcessIDP_client_secret: { type: ssm, path: /IDP_AXCESSIDP_CLIENT_SECRET/TEST4 }
+            idp_AxcessIDP_scope: CCHAxcess_data_writeaccess IDInfo offline_access CCHAxcess_Profile openid
+            idp_AxcessIDP_expose_token_iss: iss
+            idp_AxcessIDP_expose_token_authentication_authority: authentication_authority
+            idp_AxcessIDP_discovery_endpoint: ps/auth/v1.0/core/.well-known/openid-configuration
+            idp_AxcessIDP_authorization_correlationid_param: X-Correlation-ID
+            idp_AxcessIDP_back: /static/login/axcess
+
+            # IDP config for extra scope for URM token exchange flow
+            idp_tokenexchange: https://login.intelliconnect.stg.cch.com/
+            idp_tokenexchange_client_id: TAA.ACSTS
+            idp_tokenexchange_client_secret: { type: ssm, path: /IDP_ONEID_EXCHANGE_TOKEN_SECRET/STG }
+
+            # IDP config for Taskflow API token exchange flow
+            idp_oneidtokenexchangetfidp: https://login.intelliconnect.stg.cch.com/
+            idp_oneidtokenexchangetfidp_client_id: TAA.AC2TaskFlow
+            idp_oneidtokenexchangetfidp_client_secret: { type: ssm, path: /IDP_ONEID_TASKFLOW_CLIENT_SECRET/STG }
+
+            # IDP Config for getting technical user token using
+            # OAuth2.0 Client Credentials grant type instead of deprecated Password Grant (ARM WNC feature)
+            idp_wncidp: https://login.intelliconnect.stg.cch.com/
+            idp_wncidp_client_id: TAAUS.AnswerConnect-wnc.Dev
+            idp_wncidp_client_secret: { type: ssm, path: /IDP_ONEID_CC_WNC_SECRET/DEV }
+
+
+            ##### Specific token conversions configurations #####
+            # Exchange token to get one with extra scope for requests to URM
+            tokenbroker_tokenexchange: oauth2
+            tokenbroker_tokenexchange_idp: tokenexchange
+            tokenbroker_tokenexchange_grant: token-exchange
+            tokenbroker_tokenexchange_parameters: scope=urn:osa:urm:users openid
+            tokenbroker_tokenexchange_header: SecurityToken
+
+            # Exchange token to get one with specific ClientID for Taskflow API requests
+            tokenbroker_tokenexchangetf: oauth2
+            tokenbroker_tokenexchangetf_type: Bearer
+            tokenbroker_tokenexchangetf_set_type: true
+            tokenbroker_tokenexchangetf_idp: oneidtokenexchangetfidp
+            tokenbroker_tokenexchangetf_grant: token-exchange
+            tokenbroker_tokenexchangetf_parameters: scope=openid profile email
+            tokenbroker_tokenexchangetf_header: Authorization
+
+
+            ##### Freemium users config #####
+            freemium_default_implicit: on
+            freemium_default_username: acfreedev@cch.com
+            freemium_default_password: { type: ssm, path: /FREEMIUM_PASSWORD/DEV }
+            freemium_default_type: sso
+            # When the new service is created it must be added to the list below if the freemium access is expected
+            freemium_default_services: default,velvet,converter,osaalerting,osabrowse,osatopic,osaresearch,osaresource,osashortify,osaidentity,osaquery,osapersonalitem,osapersistentstorage,osaurm,osanotification,osauseractivityhistory,axcessdocument,privateurm,jqms
+
+            # Is this user needed? Review and delete
+            freemium_freeuser_username: acfreedev@cch.com
+            freemium_freeuser_password: { type: ssm, path: /FREEMIUM_PASSWORD/DEV }
+            freemium_freeuser_type: sso
+
+            # User for GPD interaction (potentially, permissions can be different); validate if needed
+            freemium_gpduser_username: acgpddev@cch.com
+            freemium_gpduser_password: { type: ssm, path: /FREEMIUM_GPD_PASSWORD/DEV }
+            freemium_gpduser_type: sso
+
+            # Technical user config for ARM WNC feature
+            # This user is getting token using OAuth2.0 Client Credentials grant type instead of deprecated Password Grant
+            freemium_wnc_type: sso
+            freemium_wnc_idp: wncidp
+            freemium_wnc_sso_grant: client_credentials
+            freemium_wnc_sso_scope: openid profile email
+            freemium_wnc_services: wnc
+
+
+            ##### Services config #####
+            # The main application service config
+            service_default_url: http://localhost:8005
+            service_default_require_auth: false
+            service_default_session_token: true
+            service_default_health_check: on
+            service_default_health_check_path: /api/2.0/public/health_check
+            service_default_health_check_required_status: 200
+
+            # OSA Services config
+            OSA_URL: osa-acdev.psdidevenvs.com/@@OSA-DOMAIN-NAME@@.svc
+            OSA_DOMAINS: Alerting&Browse&Topic&Research&Resource&Shortify&Identity&Query&Personalitem&Persistentstorage&Urm&Notification&Useractivityhistory
+            OSA_USE_GET_ACTIVE_SESSION: true
+            ## Change of the default OSA paths
+            service_osaalerting_path: /osa/Alerting
+            service_osaalerting_pass_proto: true
+            service_osabrowse_path: /osa/Browse
+            service_osabrowse_url: stg-na-regent.wkgposvc.cloud/osa/browse/
+            service_osabrowse_pass_proto: true
+            service_osatopic_path: /osa/Topic
+            service_osatopic_pass_proto: true
+            service_osaresearch_path: /osa/Research
+            service_osaresearch_pass_proto: true
+            service_osaresource_path: /osa/Resource
+            service_osaresource_pass_proto: true
+            service_osashortify_path: /osa/Shortify
+            service_osashortify_url: linkrouter-nonprod.msc-stg.wkgposvc.cloud/ACDEV/Shortify.svc/
+            service_osashortify_pass_proto: true
+            service_osaidentity_path: /osa/Identity
+            service_osaidentity_pass_proto: true
+            service_osaquery_path: /osa/Query
+            service_osaquery_pass_proto: true
+            service_osapersonalitem_path: /osa/Personalitem
+            ## Session mode is needed for Personalitem domain
+            service_osapersonalitem_token: osa-session-token
+            service_osapersonalitem_pass_proto: true
+            service_osapersistentstorage_path: /osa/Persistentstorage
+            service_osapersistentstorage_pass_proto: true
+            service_osaurm_path: /osa/Urm
+            service_osaurm_pass_proto: true
+            service_osanotification_path: /osa/Notification
+            service_osanotification_pass_proto: true
+            service_osauseractivityhistory_path: /osa/Useractivityhistory
+            service_osauseractivityhistory_url: https://ga-na-cs-ars-dvl.stg-na-onega.wkgposvc.cloud/DVL/Useractivityhistory.svc/
+            service_osauseractivityhistory_pass_proto: true
+
+            # Separate config for JQMS2
+            # consider inclusion into the common osa config as osajobqueuemanagement service
+            service_jqms_path: /osa/Jobqueuemanagement
+            ## jqms_url should be defined for each env later
+            service_jqms_url: https://jqms2-int.msc-stg.wkgposvc.cloud/ACDEV/JobQueueManagement.svc
+            service_jqms_pass_proto: true
+            service_jqms_token: access-token
+
+            # Separate OSA URM config for requests with token with specific scope (ARM concurrency feature)
+            service_privateurm_path: /private-osa/Urm
+            service_privateurm_url: http://osa-acdev.psdidevenvs.com/Urm.svc
+            service_privateurm_pass_proto: true
+            service_privateurm_tokenbroker: tokenexchange
+
+            # Separate OSA Research config for requests with token from specific idp config (ARM WNC feature)
+            service_wnc_path: /wnc/osa/Research
+            service_wnc_url: http://osa-acdev.psdidevenvs.com/Research.svc
+            service_wnc_token: osa-token
+            service_wnc_require_auth: /=wncidp
+
+            # Non-OSA services configs
+            ## For all non-OSA services token should be set explicitely because default value is not configured
+            ## if tokenbroker is set for service - token is set in tokenbroker config
+            ## If path is not set for service - path is /service_name/
+            service_converter_url: https://htmlconv-nonprod.msc-stg.wkgposvc.cloud/NASTG
+            service_converter_token: access-token
+            service_converter_pass_proto: true
+            ## Axcess api service
+            service_axcessdocument_path: /axcess_api/document_service
+            service_axcessdocument_url: https://test4api.cchaxcess.com/api/DocumentService
+            service_axcessdocument_require_auth: /=axcessidp
+            service_axcessdocument_require_auth_behavior: idp
+            service_axcessdocument_token: access-token
+            ## Router for cfactors service
+            service_axcesscfactors_url: http://localhost:8005/app/axcess/cfactors
+            service_axcesscfactors_path: /app/axcess/cfactors
+            service_axcesscfactors_require_auth: false
+            ## OneID-protected cfactors service
+            service_axcesscfactorsoneid_url: http://localhost:8005/app/axcess/cfactors-oneid
+            service_axcesscfactorsoneid_path: /app/axcess/cfactors-oneid
+            service_axcesscfactorsoneid_require_auth: /=oneid
+            service_axcesscfactorsoneid_require_auth_behavior: idp
+            service_axcesscfactorsoneid_token: access-token
+            ## IDaaS-protected cfactors service
+            service_axcesscfactorsidaas_url: http://localhost:8005/app/axcess/cfactors-idaas
+            service_axcesscfactorsidaas_path: /app/axcess/cfactors-idaas
+            service_axcesscfactorsidaas_require_auth: /=axcessidp
+            service_axcesscfactorsidaas_require_auth_behavior: idp
+            service_axcesscfactorsidaas_token: access-token
+            ## Velvet interface is not OSA2 hence added to this section
+            service_velvet_url: velvet-acdev.psdidevenvs.com/
+            service_velvet_token: velvet-osa-token
+            service_velvet_exclude_auth: /Content/**
+            service_velvet_pass_proto: true
+            ## Taskflow API service
+            service_tf_path: /taskflow/api
+            service_tf_url: https://fdca-stg.pubrepl.tfprod.app
+            service_tf_pass_proto: true
+            service_tf_tokenbroker: tokenexchangetf
+            service_tf_proxy_ssl_server_name: on
+            ## Beyond Q&A
+            service_beyond_path: /api/beyond
+            service_beyond_url: https://beyond.wolterskluwer.ai/api/beyond/
+            service_beyond_pass_proto: true
+
+
+            ##### Hooks config #####
+            # Set specific headers for every request to OSA and velvet
+            hook_productheaders: http://localhost:8005/hook/authorization/product-headers
+            hook_productheaders_stage: authorization
+            hook_productheaders_method: POST
+            hook_productheaders_headers: x-cpid&x-api-key
+            hook_productheaders_condition: http/path[]=/osa/**&http/path[]=/velvet/**&http/path[]=/private-osa/**&http/path[]=/wnc/osa/**
+            hook_productheaders_allow_forwarded_headers_override: true
+            # NOTE: much more application logic embedded in the hook below, than just cache interactions. Need to rename
+            hook_cachesuggestions: http://localhost:8005/hook/session/cache-suggestions
+            hook_cachesuggestions_method: POST
+            hook_cachesuggestions_send_token_payload_in_body: true
+            hook_cachesuggestions_send_original_token_in_body: true
+            hook_cachesuggestions_stage: session
+            # Add Axcess Integrator Key for requests to Axcess API
+            hook_axcessintegrator: http://localhost:8005/hook/authorization/axcess-integrator
+            hook_axcessintegrator_stage: authorization
+            hook_axcessintegrator_method: POST
+            hook_axcessintegrator_condition: http/path[]=/axcess_api/document_service/**
+            # Add Beyond API key to requests to BQA
+            # Condition is env-specific, because has freemium user sub dependency
+            hook_beyond: http://localhost:8005/hook/authorization/beyond
+            hook_beyond_stage: authorization
+            hook_beyond_condition: tokenPayload/sub!=acfreedev@cch.com&httpCookie/previously_logged_in=true&http/path[]=/api/beyond/**
+
+
+            ##### Resource access restriction #####
+            # Allow authenticated access to resources. See https://confluence.wolterskluwer.io/display/GATEWAY/1.20.0
+            authorization_allowauthn_resource: /**
+            authorization_allowauthn_effect: allow
+
+            # Restriction of the access to osa if user logged in as freemium user
+            # Condition is env-specific, because has freemium user sub dependency
+            authorization_protected_resource: /osa/**
+            authorization_protected_effect: deny
+            authorization_protected_condition: tokenPayload/sub=acfreedev@cch.com&httpCookie/previously_logged_in=true
+
+network:
+    vpcId: vpc-03d9e6a2ad4fd6423
+    publicSubnets:
+      - subnetId: subnet-0d94adfafc6c1d7da
+        availabilityZone: us-east-1a
+      - subnetId: subnet-01cdacf1ed9c74270
+        availabilityZone: us-east-1b
+    privateSubnets:
+      - subnetId: subnet-02e7c25b5ace9f2fd
+        availabilityZone: us-east-1a
+      - subnetId: subnet-09ed7dbd0d06ed781
+        availabilityZone: us-east-1b
+
+aws:
+    tags:
+        wk_division: taa
+        wk_division_code: d002
+        wk_business_unit: TAA R and L
+        wk_bu_code: b130
+        wk_application_name: answerconnect us
+        wk_application_id: acus
+        wk_application_bit_id: 041800001K5M
+        wk_environment_name: dev
+        wk_environment_type: nonprod
+        wk_data_classification: confidential
+        wk_requestor: mike.tomaszewski@wolterskluwer.com
+        wk_business_owner: jeanne.fitzmaurice@wolterskluwer.com
+        wk_technical_owner: mike.tomaszewski@wolterskluwer.com
+        wk_app_support_group: WKG-GPO-PSGAL2Support@wolterskluwer.com
+        wk_infra_support_group: DXG-DSS-HUB2-DevOps@wolterskluwer.com

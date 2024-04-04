@@ -1,0 +1,118 @@
+services:
+    default:
+        autoScaling:
+            max:
+                feature: 1
+                release: 4
+            min:
+                feature: 1
+                release: 1
+            cpuThreshold: 70
+            memoryThreshold: 70
+            lowCpuThreshold: 30
+            lowMemoryThreshold: 50
+        memory:
+            release: 1024
+            feature: 512
+        cpu:
+            release: 512
+            feature: 256
+
+logs:
+    type: logstash
+    host: nonprd-li-logstash.wkgposvc.cloud
+    port: '444'
+    index: gpo-ps-hub2-taldvl-ac
+    clientId: ANSWERCONNECT
+    tls: On
+    tlsVerify: Off
+
+containers:
+    csn:
+        build: '.'
+        environment:
+            env: tal-dvl
+            PORT: 8005
+            REDIS_AUTH_APPLICATION: { type: ssm, path: /REDIS_AUTH_APPLICATION/DEV }
+            AXCESS_INTEGRATOR_KEY: { type: ssm, path: /AXCESS_INTEGRATOR_KEY/STG }
+            ARMAC_KTMINE_KEY: { type: ssm, path: /ARMAC_KTMINE_KEY/STG }
+            ARMAC_LICENSE_API_KEY: { type: ssm, path: /LICENSE_SERVICE/STG }
+            ELASTIC_APM_SECRET_TOKEN: { type: ssm, path: /ELASTIC_APM_SECRET_TOKEN/DEV }
+            AWS_BRAND_LOGO_BUCKET_ACCESS_KEY: { type: ssm, path: /BRAND_LOGOS_S3_BUCKET_ACCESS_KEY/DEV }
+            AWS_BRAND_LOGO_BUCKET_SECRET_KEY: { type: ssm, path: /BRAND_LOGOS_S3_BUCKET_SECRET_KEY/DEV }
+            AWS_AXCESS_BUCKET_ACCESS_KEY: { type: ssm, path: /AXCESS_COMPLEXITY_FACTORS_AWS_BUCKET_ACCESS_KEY/STG }
+            AWS_AXCESS_BUCKET_SECRET_KEY: { type: ssm, path: /AXCESS_COMPLEXITY_FACTORS_AWS_BUCKET_SECRET_KEY/STG }
+            AWS_EDWARD_JONES_COUPON_CODES_KEY: { type: ssm, path: /EDWARD_JONES_COUPON_CODES/STG }
+            AWS_BEYOND_API_KEY: { type: ssm, path: /BEYOND_API_KEY/STG }
+
+    gateway:
+        environment:
+            ##### General gateway config #####
+            REDIS_HOST: master.reri76045fxpnbk.bavg8t.use1.cache.amazonaws.com
+            REDIS_AUTH: { type: ssm, path: /REDIS_AUTH_GATEWAY/DEV }
+            REDIS_KEY_PREFIX: taldvl
+
+
+            ##### IDPs config #####
+            # OneID (default) IDP config
+            idp_OneID: https://login.intelliconnect.stg.cch.com/
+            idp_OneID_client_id: TAA.AnswerConnectOrchestrated.TALDVL
+            idp_OneID_client_secret: { type: ssm, path: /IDP_ONEID_CLIENT_SECRET/DVL }
+            idp_OneID_end_session_endpoint: https://login.intelliconnect.stg.cch.com/as/authorization.oauth2?client_id=TAA.AnswerConnect&response_type=code&logout=true
+            idp_OneID_relogin_parameters: logout_uri=https://answerconnect.dvl.lynx-app.com/static/logout&redirect_uri=https://answerconnect.dvl.lynx-app.com/static/logout
+
+            # Axcess IDP config
+            idp_AxcessIDP: https://test6login.cchaxcess.com
+            idp_AxcessIDP_client_id: TAA.AnswerConnect.Test6
+            idp_AxcessIDP_client_secret: { type: ssm, path: /IDP_AXCESSIDP_CLIENT_SECRET/TEST6 }
+
+            # IDP config for extra scope for URM token exchange flow
+            idp_tokenexchange: https://login.intelliconnect.stg.cch.com/
+            idp_tokenexchange_client_id: TAA.ACSTS
+            idp_tokenexchange_client_secret: { type: ssm, path: /IDP_ONEID_EXCHANGE_TOKEN_SECRET/STG }
+
+            # IDP config for Taskflow API token exchange flow
+            idp_oneidtokenexchangetfidp: https://login.intelliconnect.stg.cch.com/
+            idp_oneidtokenexchangetfidp_client_id: TAA.AC2TaskFlow
+            idp_oneidtokenexchangetfidp_client_secret: { type: ssm, path: /IDP_ONEID_TASKFLOW_CLIENT_SECRET/STG }
+
+            # IDP Config for ARM WNC feature technical user token
+            idp_wncidp: https://login.intelliconnect.stg.cch.com/
+            idp_wncidp_client_id: TAAUS.AnswerConnect-wnc.TALDVL
+            idp_wncidp_client_secret: { type: ssm, path: /IDP_ONEID_CC_WNC_SECRET/DVL }
+
+
+            ##### Freemium users config #####
+            freemium_default_password: { type: ssm, path: /FREEMIUM_PASSWORD/DVL }
+            freemium_freeuser_password: { type: ssm, path: /FREEMIUM_PASSWORD/DVL }
+            freemium_gpduser_password: { type: ssm, path: /FREEMIUM_GPD_PASSWORD/DVL }
+
+
+            ##### Services config #####
+            # OSA Services config
+            OSA_URL: osa.taldvl.psdidevenvs.com/@@OSA-DOMAIN-NAME@@.svc
+            service_osashortify_url: linkrouter-nonprod.msc-stg.wkgposvc.cloud/TALDVL/Shortify.svc/
+            service_osauseractivityhistory_url: https://ga-na-cs-ars-dvl.stg-na-onega.wkgposvc.cloud/DVL/Useractivityhistory.svc/
+            service_jqms_url: https://jqms2-nonprod.msc-stg.wkgposvc.cloud/TALDVL/JobQueueManagement.svc
+            ## Separate OSA URM config for requests with token with specific scope (ARM concurrency feature)
+            service_privateurm_url: http://osa.taldvl.psdidevenvs.com/Urm.svc
+            ## Separate OSA Research config for requests with token from specific idp config (ARM WNC feature)
+            service_wnc_url: http://osa.taldvl.psdidevenvs.com/Research.svc
+
+            # Non-OSA services configs
+            service_converter_url: https://htmlconv-nonprod.msc-stg.wkgposvc.cloud/DVL
+            service_velvet_url: us-velvet.taldvl.psdidevenvs.com/
+            service_axcessdocument_url: https://test6api.cchaxcess.com/api/DocumentService
+            service_tf_url: https://fdca-stg.pubrepl.tfprod.app
+
+
+            ##### Hooks config #####
+            hook_beyond_condition: tokenPayload/sub!=c0272a1c967c6a7b15ede79ffbaecc513d3f7d3b&httpCookie/previously_logged_in=true&http/path[]=/api/beyond/**
+
+
+            ##### Resource access restriction #####
+            authorization_protected_condition: tokenPayload/sub=c0272a1c967c6a7b15ede79ffbaecc513d3f7d3b&httpCookie/previously_logged_in=true
+
+aws:
+    tags:
+        wk_environment_name: dvl

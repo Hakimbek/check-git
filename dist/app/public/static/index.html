@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head csn-page-meta insert-cf-resources>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title><$= defaultPageTitle $></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=0"/>
+    <base href="/"/>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=0, viewport-fit=cover" />
+    <meta name="description" content="<$= defaultMetaDescription $>" />
+    <meta name="robots" content="<$= defaultIndexFollowRule $>" />
+
+    <meta name="application-name" content="CCH AnswerConnect" />
+    <meta name="apple-mobile-web-app-title" content="CCH AnswerConnect" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+
+    <meta name="application-name" content="CCH AnswerConnect" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-square70x70logo" content="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand-wheel.svg" />
+    <meta name="msapplication-square150x150logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+    <meta name="msapplication-wide310x150logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+    <meta name="msapplication-square310x310logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+    <link rel="icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/favicon.png" />
+    <link rel="apple-touch-icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+    <link rel="canonical" href="<$= defaultCanonicalUrl $>" />
+
+    <!-- Angular ng-cloak style -->
+    <style>
+        [ng-cloak] {
+            display: none;
+        }
+    </style>
+
+    <!--Application css-->
+    <link rel="stylesheet" href="static/css/scss/index.css?_etag=be746ae13ce725e5cbcbbf85db8aefaa" />
+    <link rel="stylesheet" href="static/css/scss/fundamentals-index.css" />
+
+    <script>window.prerenderReady = false;</script>
+    <$ if (!isPrerenderBot) { $>
+        <script src="<$= appcuesScript $>"></script>
+    <$ } $>
+
+    <$- prefetchResources $>
+
+    <script type="text/javascript" src="static/vars<$= varsEtag $>"></script>
+
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>
+        var googleServicesSettings = JSON.parse('<$- JSON.stringify(googleServices) $>');
+        if (googleServicesSettings.tagManager.enabled && googleServicesSettings.optimize.enabled) {
+            var containerOptions = {};
+            containerOptions[googleServicesSettings.optimize.container] = true;
+            (function(a, s, y, n, c, h, i, d, e) {
+                s.className += ' ' + y;
+                h.start = 1 * new Date;
+                h.end = i = function() {
+                    s.className = s.className.replace(RegExp(' ?' + y), '')
+                };
+                (a[ n ] = a[ n ] || []).hide = h;
+                setTimeout(function() {
+                    i();
+                    h.end = null
+                }, c);
+                h.timeout = c;
+            })(window, document.documentElement, 'async-hide', 'dataLayer', 2000, containerOptions);
+        }
+    </script>
+
+    <!-- Google Analytics -->
+    <script>
+        if(googleServicesSettings.analytics.enabled){
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', googleServicesSettings.analytics.id , {'siteSpeedSampleRate': 100, 'cookieDomain': window.location.hostname});
+            ga('require', googleServicesSettings.optimize.container);
+        }
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Google Tag Manager -->
+    <script>
+        if(googleServicesSettings.tagManager.enabled){
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer',googleServicesSettings.tagManager.id);
+        }
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Set info about browser -->
+    <script>
+        document.documentElement.setAttribute("data-browser", navigator.userAgent);
+    </script>
+    <!-- End Set info about browser -->
+
+    <script>
+        function runApp() {
+            angular.bootstrap(document, ['csn']);
+        }
+        document.addEventListener('DOMContentLoaded', runApp);
+    </script><script src="/static/js/csn.js?_etag=39cbe447df11277095bc9a19263dfded"></script>
+</head>
+
+<body id="body"
+    ng-class="{ 'no-hover': isMobile }"
+    csn-scroll-to-top
+    csn-init-state-scroll
+    class="<$= userType $>"
+    data-waf="<$= wafParam $>">
+
+    <$- fakeHeader $>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=<$= googleServices.tagManager.id $>"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <ui-view class="main-view"></ui-view>
+    <div bmb-include="common/popups/src/tpl/popups.tpl.html"></div>
+    <csn-popovers></csn-popovers>
+    <csn-activate-optimize></csn-activate-optimize>
+    <csn-toast-container></csn-toast-container>
+</body>
+</html>

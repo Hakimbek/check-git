@@ -1,0 +1,255 @@
+body {
+  background: #fff;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wk-header .wk-logo-large {
+  height: 1.8125rem;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  max-width: 100%;
+  border: 0;
+}
+
+body, html {
+  color: #474747;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.wk-notification-screen {
+  background-color: #fff;
+  bottom: 0;
+  color: #474747;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.wk-header {
+  background-color: #fff;
+  width: 100%;
+}
+
+.wk-header>.wk-header-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.wk-header>.wk-header-container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.wk-header .wk-logo {
+  display: block;
+  width: 190px;
+}
+
+.wk-notification-screen .wk-header .wk-product-brand {
+  font-size: 24px;
+  font-weight: 500;
+  color: #85bc20;
+  display: block;
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  margin: .625rem .9375rem;
+}
+
+.wk-notification-screen .wk-header .wk-product-brand .product-app-name-extra {
+  font-style: italic;
+  color: #a4cd58;
+}
+
+.product-brand::after {
+  content: '\00AE';
+  font-size: .6667em;
+  position: relative;
+  top: -.3em;
+}
+
+a {
+  cursor: pointer;
+  color: #007ac3;
+  text-decoration: none;
+  transition: color .1s ease-out;
+  background-color: transparent;
+}
+
+a:active, a:focus, a:hover, a:visited {
+  text-decoration: none;
+}
+
+h2 {
+  line-height: 1.1;
+  font-weight: 700
+}
+
+::selection {
+  background-color: #C7E4AA;
+}
+
+.wk-notification-layout .wk-notification-wrapper {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.wk-notification-layout .wk-notification-wrapper .wk-notification-content {
+  box-sizing: border-box;
+  background-color: #ededed;
+  padding: 2rem 1rem;
+}
+
+.wk-notification-layout .wk-notification-wrapper .wk-notification-content .page-info {
+  font-family: Franziska, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.wk-notification-layout .wk-notification-wrapper .wk-notification-content p {
+  font-size: .9375rem;
+}
+
+.wk-notification-layout .wk-notification-wrapper .wk-button {
+  padding-left: 3.125rem;
+  padding-right: 3.125rem;
+}
+
+.wk-logo-large {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .wk-notification-layout .wk-notification-wrapper {
+      width: 100%;
+  }
+
+  .wk-notification-layout .wk-notification-wrapper .wk-notification-content {
+      background: 0 0;
+      padding: 1.5625rem 1.75rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .wk-logo-small {
+      display: none;
+  }
+
+  .wk-logo-large {
+      display: block;
+  }
+
+  .wk-header>.wk-header-container {
+      padding: .5625rem 1rem;
+  }
+
+  .wk-notification-screen .wk-header .wk-logo {
+      float: left;
+  }
+
+  .wk-header .wk-logo {
+      margin: .71875rem 0;
+  }
+
+  .wk-notification-screen .wk-header .wk-product-brand {
+      float: right;
+      margin: 1.625rem 0 0;
+  }
+}
+
+.wk-login-footer {
+  margin-top: 1rem;
+}
+
+.wk-login-footer .wk-copyright-text {
+  color: #474747;
+  font-size: 0.9rem;
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.wk-login-footer .wk-copyright-text a {
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.wk-notification-control {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.wk-button {
+  padding: 1em 2em;
+}
+
+.wk-button-next::after {
+  content: " \00bb";
+}
+
+.fullysuspended-notification.wk-notification-layout .wk-notification-wrapper {
+  max-width: 600px;
+}
+
+.fullysuspended-notification.wk-notification-layout .wk-notification-wrapper .wk-notification-content {
+  padding: 20px 16px;
+}
+
+.fullysuspended-notification .fullysuspended-notification__info-wrapper {
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 48px;
+  border: 1px solid #007AC3;
+}
+
+.fullysuspended-notification .fullysuspended-notification__text {
+  font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: start;
+  color: #232323;
+}
+
+.fullysuspended-notification .fullysuspended-notification__text_bold {
+  font-weight: 500;
+}
+
+.fullysuspended-notification.wk-notification-layout .wk-notification-wrapper .wk-button.fullysuspended-notification__button {
+  padding: 14.5px 16px;
+}
+
+.fullysuspended-notification .wk-login-footer .wk-copyright-text {
+  font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  color: #A3A3A3;
+  font-weight: 400;
+  font-size: 13.33px;
+  line-height: 21.6px;
+}
+
+.fullysuspended-notification .wk-login-footer .wk-copyright-text a {
+  font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 400;
+}

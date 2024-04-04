@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GATEWAY_BEYOND_API_URL = exports.FUNCTION_NAME_BEYOND_RETRIEVE_SUGGESTIONS = exports.FUNCTION_NAME_BEYOND_WARM_ENTITLEMENTS_CACHE = exports.FUNCTION_NAME_BEYOND_RETRIEVE_ANSWERS = exports.FUNCTION_NAME_BEYOND_HARVEST = exports.LOG_MESSAGE_REQUEST_WARM_ENTITLEMENTS_CACHE_ERROR = exports.LOG_MESSAGE_REQUEST_WARM_ENTITLEMENTS_CACHE_END = exports.LOG_MESSAGE_REQUEST_WARM_ENTITLEMENTS_CACHE_START = exports.LOG_MESSAGE_REQUEST_RETRIEVE_SUGGESTIONS_ERROR = exports.LOG_MESSAGE_REQUEST_RETRIEVE_SUGGESTIONS_END = exports.LOG_MESSAGE_REQUEST_RETRIEVE_SUGGESTIONS_START = exports.LOG_MESSAGE_REQUEST_RETRIEVE_ANSWERS_ERROR = exports.LOG_MESSAGE_REQUEST_RETRIEVE_ANSWERS_END = exports.LOG_MESSAGE_REQUEST_RETRIEVE_ANSWERS_START = exports.LOG_MESSAGE_REQUEST_HARVEST_ERROR = exports.LOG_MESSAGE_REQUEST_HARVEST_END = exports.LOG_MESSAGE_REQUEST_HARVEST_START = void 0;
+exports.LOG_MESSAGE_REQUEST_HARVEST_START = 'Request harvest Beyond';
+exports.LOG_MESSAGE_REQUEST_HARVEST_END = 'Harvest Beyond request completed successfully';
+exports.LOG_MESSAGE_REQUEST_HARVEST_ERROR = 'Failed to request Beyond harvest';
+exports.LOG_MESSAGE_REQUEST_RETRIEVE_ANSWERS_START = 'Request retrieve Beyond answers';
+exports.LOG_MESSAGE_REQUEST_RETRIEVE_ANSWERS_END = 'Retrieve Beyond answers request completed successfully';
+exports.LOG_MESSAGE_REQUEST_RETRIEVE_ANSWERS_ERROR = 'Failed to retrieve Beyond answers';
+exports.LOG_MESSAGE_REQUEST_RETRIEVE_SUGGESTIONS_START = 'Request retrieve Beyond suggestions';
+exports.LOG_MESSAGE_REQUEST_RETRIEVE_SUGGESTIONS_END = 'Retrieve Beyond suggestions request completed successfully';
+exports.LOG_MESSAGE_REQUEST_RETRIEVE_SUGGESTIONS_ERROR = 'Failed to retrieve Beyond suggestions';
+exports.LOG_MESSAGE_REQUEST_WARM_ENTITLEMENTS_CACHE_START = 'Beyond entitlements cache request';
+exports.LOG_MESSAGE_REQUEST_WARM_ENTITLEMENTS_CACHE_END = 'Beyond entitlements cache request completed successfully';
+exports.LOG_MESSAGE_REQUEST_WARM_ENTITLEMENTS_CACHE_ERROR = 'Failed to complete Beyond entitlements cache request';
+exports.FUNCTION_NAME_BEYOND_HARVEST = 'harvest';
+exports.FUNCTION_NAME_BEYOND_RETRIEVE_ANSWERS = 'retrieveAnswers';
+exports.FUNCTION_NAME_BEYOND_WARM_ENTITLEMENTS_CACHE = 'warmEntitlementsCache';
+exports.FUNCTION_NAME_BEYOND_RETRIEVE_SUGGESTIONS = 'retrieveSuggestions';
+exports.GATEWAY_BEYOND_API_URL = 'http://localhost/api';
+//# sourceMappingURL=beyond.constants.js.map

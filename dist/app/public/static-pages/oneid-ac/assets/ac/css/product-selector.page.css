@@ -1,0 +1,155 @@
+.wk-product-selector-screen {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.product-selection-container {
+    margin: 0 3rem;
+}
+
+.tips-line {
+    margin: 1rem 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+}
+
+.ac-section, .ic-section {
+    margin-bottom: 2rem;
+    border: 1px solid #DADADA;
+    position: relative;
+}
+
+.ac-section {
+    background-color: #F6F6F6;
+}
+
+.ac-text-section, .ic-text-section {
+    padding: 0 5rem 2rem 1.5rem;
+}
+
+.ac-title {
+    color: #648d18;
+    font-weight: 500;
+    font-size: 0rem;
+}
+
+.ac-product-brand {
+    font-size: 2.3rem;
+    padding-right: .5rem;
+}
+
+.ac-product-name, .ac-product-name-extra {
+    font-size: 2.3rem;
+}
+
+.ac-product-name-extra, .ic-product-name-extra {
+    font-style: italic;
+}
+
+.ac-product-brand::after, .ic-product-brand::after {
+    content: '\00AE';
+    font-size: .6667em;
+    position: relative;
+    top: -.3em;
+}
+
+.ac-subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 0.8rem;
+}
+
+.ac-description, .ic-description {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.01rem;
+}
+
+.ic-img-section, .ac-img-section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.ic-title {
+    color: #005b92;
+    font-weight: 500;
+    font-size: 0rem;
+    margin-bottom: 1rem;
+}
+
+.ic-product-brand {
+    font-size: 1.8rem;
+    padding-right: .5rem;
+}
+
+.ic-product-name {
+    font-weight: 400;
+}
+
+.ic-product-name, .ic-product-name-extra {
+    font-size: 1.8rem;
+}
+#ac-login-button{
+    background-color: #C2DE90;
+    color: #000;
+}
+#ac-login-button:hover{
+    background-color: #85BC20;
+    color: #000;
+}
+#ic-login-button{
+    background-color: #007AC3;
+    color: #fff;
+}
+#ic-login-button:hover{
+    background-color: #003D61;
+    color: #fff;
+}
+
+.footer {
+    margin: 0 3rem;
+    color:  #DADADA;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 37.5rem) {
+    .wk-header .wk-header-container {
+        padding: .5625rem 1rem;
+    }
+}
+
+@media (max-width: 37.5rem) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 65rem) {
+    .ac-text-section, .ic-text-section {
+        padding: 0 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 50rem) {
+    .ac-section .ac-img-section, .ic-section .ic-img-section {
+        display: none;
+    }
+
+    .ac-section .ac-text-section, .ic-section .ic-text-section {
+        width: 100%;
+    }
+
+    .ac-text-section, .ic-text-section {
+        padding: 0 1.5rem 1rem;
+    }
+}

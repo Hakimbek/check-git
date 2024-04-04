@@ -1,0 +1,175 @@
+/*Created with Adobe RoboHelp.*/
+BODY {
+	background-color: #ffffff;
+	font-family:Verdana;
+	font-size:10.0pt;
+	color:#000000;
+}
+P {
+	font-family: Verdana;
+	font-size: 10.0pt;
+	color: #000000;
+	margin-bottom: 14pt;
+	margin-top: 6pt;
+}
+LI.P {
+	font-family: Verdana;
+	font-size: 10.0pt;
+	color: #000000;
+}
+H1 {
+	font-family: Verdana;
+	border-bottom-style: Double;
+	border-bottom-color: #cbd3d8;
+	font-weight: normal;
+	font-style: normal;
+	border-top-style: Double;
+	border-top-width: 4px;
+	border-bottom-width: 4px;
+	border-top-color: #cbd3d8;
+	font-size: 16pt;
+	color: #5193b7;
+}
+LI.H1 {
+	font-family: Verdana;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16pt;
+	color: #5193b7;
+}
+H2 {
+	font-family: Verdana;
+	font-weight: bold;
+	color: #000000;
+	font-size: 12pt;
+}
+LI.H2 {
+	font-family: Verdana;
+	font-weight: bold;
+	color: #000000;
+	font-size: 12pt;
+}
+H3 {
+	font-family: Verdana;
+	font-size: 10.0pt;
+	font-weight: bold;
+	font-style: normal;
+	color: #000000;
+	margin-bottom: 6pt;
+}
+LI.H3 {
+	font-family: Verdana;
+	font-size: 10.0pt;
+	font-weight: bold;
+	font-style: normal;
+	color: #000000;
+}
+H4 {
+	font-family: Verdana;
+	font-size: 10.0pt;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+}
+LI.H4 {
+	font-family: Verdana;
+	font-size: 10.0pt;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+}
+H5 {
+	font-family: Verdana;
+	font-weight: normal;
+	font-size: 10.0pt;
+	color: #000000;
+}
+LI.H5 {
+	font-family: Verdana;
+	font-weight: normal;
+	font-size: 10.0pt;
+	color: #000000;
+}
+H6 {
+	font-family: Verdana;
+	font-weight: normal;
+	font-size: 10.0pt;
+	color: #000000;
+}
+LI.H6 {
+	font-family: Verdana;
+	font-weight: normal;
+	font-size: 10.0pt;
+	color: #000000;
+}
+A:link {
+	color: #0000ff;
+	text-decoration: underline;
+}
+A:visited {
+	color: #0000ff;
+	text-decoration: underline;
+}
+A.expandspot {
+	color: #008000;
+	cursor: hand;
+	font-style: italic;
+	text-decoration: none;
+}
+SPAN.expandtext {
+	font-style: italic;
+	font-weight: normal;
+	color: #ff0000;
+}
+A.dropspot {
+	cursor: hand;
+	color: #008000;
+	font-style: italic;
+	text-decoration: none;
+}
+A.glossterm {
+	color: #800000;
+	cursor: hand;
+	font-style: italic;
+	text-decoration: none;
+}
+SPAN.glosstext {
+	font-style: italic;
+	font-weight: normal;
+	color: #0000ff;
+}
+OL,
+UL {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-family: Verdana;
+	font-size: 10.0pt;
+}
+H2.SeeAlso {
+	margin-bottom: 3pt;
+	color: #5193b7;
+}
+LI.H2-SeeAlso {
+	color: #5193b7;
+}
+P.SeeAlsoTopics {
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+}
+P.Bullets {
+	margin-top: 12.5pt;
+	list-style: disc;
+}
+LI.P-Bullets {
+	list-style: disc;
+}
+P.Note {
+	background-color: #dbe0e3;
+}
+P.Tip {
+	background-color: #dbe0e3;
+	color: #305c5a;
+}
+LI.P-Tip {
+	color: #305c5a;
+}

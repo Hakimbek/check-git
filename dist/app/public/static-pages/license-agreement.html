@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>License Agreement - CCH AnswerConnect | Wolters Kluwer</title>
+
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="cleartype" content="on" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=0, viewport-fit=cover" />
+<meta name="description" content="A comprehensive Federal, State &amp; International tax resource that you can trust to provide you with answers to your most important tax questions." />
+<meta name="robots" content="noindex, nofollow" />
+<base href="/"/>
+
+<meta name="application-name" content="CCH AnswerConnect" />
+<meta name="apple-mobile-web-app-title" content="CCH AnswerConnect" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+<meta name="application-name" content="CCH AnswerConnect" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-square70x70logo" content="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand-wheel.svg" />
+<meta name="msapplication-square150x150logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<meta name="msapplication-wide310x150logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<meta name="msapplication-square310x310logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+<link rel="icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/favicon.png" />
+<link rel="apple-touch-icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<link rel="apple-touch-startup-image" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+<link rel="canonical" href="" />
+
+
+    
+           <link href="/static/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+       
+    
+        <link href="//cdn.wolterskluwer.io/wk-css/0.x.x/standard.min.css" type="text/css" rel="stylesheet">
+    
+    <link href="/static/css/license-agreement.page.css" type="text/css" rel="stylesheet">
+</head>
+<body id="body">
+
+<script type="text/javascript" src="static/vars"></script>
+<div class="wk-login-screen license-agreement-page">
+    <header class="wk-header">
+    <div class="wk-header-container">
+        <div>
+            <a class="wk-logo"  >
+                <img src="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand-small.svg" alt="CCH® AnswerConnect" class="wk-logo-small">
+                <img src="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand.svg" alt="CCH® AnswerConnect" class="wk-logo-large">
+            </a>
+        </div>
+        <div class="wk-product-brand">
+            <span class="product-brand">CCH</span>
+            <span class="product-app-name">Answer</span><span class="product-app-name-extra">Connect</span>
+        </div>
+    </div>
+</header>
+
+    <div class="wk-login-layout-options">
+        <main class="license-form-wrapper">
+            <div class="license-form row">
+                <h4>License Agreement</h4>
+                <div class="loading-spinner-container">
+                    <i class="loading-spinner fa fa-spinner fa-spin"></i>
+                </div>
+                <iframe class="license-agreement-content">
+                </iframe>
+                <div class="wk-button-bar btn-footer">
+                    <div class="wk-checkbox-field license-agree-checkbox">
+                        <label>
+                            <input id="is-agree-checkbox" type="checkbox" name="return" disabled/>
+                            <span>I agree to the terms of the license agreement</span>
+                        </label>
+                    </div>
+                    <div class="wk-button-group-right">
+                        <button id="submit-button" class="wk-button-success disabled" disabled>
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="wk-login-footer">
+    <p class="wk-copyright-text">
+        &copy;<span class="current-year"></span>
+        <span>CCH Incorporated and its affiliates and licensors. All rights reserved. Subject to </span>
+        <a href="//researchhelp.cch.com/License_Agreement.htm" target="_blank" rel="nofollow">
+            <span>Terms &amp; Conditions.</span>
+        </a>
+        <br />
+        <span>Version: 5.3.7</span>
+    </p>
+</footer>
+<script>
+    const currentYearForVelocity = '$localDateTime.getYear()';
+    const currentYearForEjs = '<&= currentYear &>';
+    const currentYear = isFinite(currentYearForVelocity) ? currentYearForVelocity : currentYearForEjs;
+    const currentYearElement = document.querySelector('.current-year');
+
+    currentYearElement.innerText = currentYear;
+</script>
+    </div>
+</div>
+<script>
+    function createScriptElement(src) {
+        var scriptElement = document.createElement('script');
+        scriptElement.src = src;
+        return scriptElement;
+    }
+
+    function loadLicenseAgreementScript() {
+        var licenseAgreementScriptElement = createScriptElement('/static/js/license-agreement.js');
+        document.head.appendChild(licenseAgreementScriptElement);
+    }
+
+    if (wkVars) {
+        var appcuesScriptElement = createScriptElement(wkVars.appcuesScript);
+        appcuesScriptElement.onload = loadLicenseAgreementScript;
+        appcuesScriptElement.onerror = loadLicenseAgreementScript;
+        document.head.appendChild(appcuesScriptElement);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Login to CCH AnswerConnect | Wolters Kluwer</title>
+
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="cleartype" content="on" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=0, viewport-fit=cover" />
+<meta name="description" content="A comprehensive Federal, State &amp; International tax resource that you can trust to provide you with answers to your most important tax questions." />
+<meta name="robots" content="noindex, nofollow" />
+<base href="/"/>
+
+<meta name="application-name" content="CCH AnswerConnect" />
+<meta name="apple-mobile-web-app-title" content="CCH AnswerConnect" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+<meta name="application-name" content="CCH AnswerConnect" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-square70x70logo" content="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand-wheel.svg" />
+<meta name="msapplication-square150x150logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<meta name="msapplication-wide310x150logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<meta name="msapplication-square310x310logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+<link rel="icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/favicon.png" />
+<link rel="apple-touch-icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<link rel="apple-touch-startup-image" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+<link rel="canonical" href="" />
+
+
+    
+           <link href="https://cdn.wolterskluwer.io/wk/icons/1.2.x/wk-icons-all-open.css" type="text/css" rel="stylesheet"/>
+       
+           <link href="https://cdn.wolterskluwer.io/wk/icons/1.2.x/wk-icons-all-filled.css" type="text/css" rel="stylesheet"/>
+       
+    
+        <link href="//cdn.wolterskluwer.io/wk-css/0.x.x/standard.min.css" type="text/css" rel="stylesheet">
+    
+    <link href="./assets/ac/css/login.page.css" type="text/css" rel="stylesheet">
+</head>
+<body id="body">
+#if($rememberUsernameCookieExists)
+#set ($rememberUsernameChecked = "checked")
+#end
+<script>
+    var errorCode = '$errorMessageKey';
+    var loginFailureMessage = 'Sorry, your credentials were not recognized or your subscription may have expired. ' +
+        'If you log in through your firm\'s network, <a href="$baseAuthUrl&reset=true">re-enter your email address here.</a>';
+    var forgotPasswordViewTitle = 'Forgot password - CCH AnswerConnect | Wolters Kluwer';
+    var loginErrorViewTitle = 'Unable to login - CCH AnswerConnect | Wolters Kluwer';
+    var loginViewTitle = 'Login to CCH AnswerConnect | Wolters Kluwer';
+</script>
+<div class="wk-login-screen">
+    <header class="wk-header">
+    <div class="wk-header-container">
+        <div>
+            <a class="wk-logo"  >
+                <img src="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand-small.svg" alt="CCH® AnswerConnect" class="wk-logo-small">
+                <img src="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand.svg" alt="CCH® AnswerConnect" class="wk-logo-large">
+            </a>
+        </div>
+        <div class="wk-product-brand">
+            <span class="product-brand">CCH</span>
+            <span class="product-app-name">Answer</span><span class="product-app-name-extra">Connect</span>
+        </div>
+    </div>
+</header>
+
+
+    <div class="preloader-overlay">
+        <div class="login-preloader wk-icon-spinner wk-spin"></div>
+    </div>
+    <div class="wk-login-layout">
+        <main>
+            #if($useCreateUserLinkInTemplate)
+            <div class="self-registration-guide">
+                <span class="wk-icon-filled-info" aria-hidden="true"></span>
+                <h5 class="self-registration-guide-title">Welcome</h5>
+                <p class="self-registration-guide-content">
+                    If this is your first time here, you’ll need to 
+                    <a href="$templateMessages.getMessage('html.form.login.template.', 'createUserLinkValue')$ip" target="_blank" class="self-registration-link">
+                        create a User ID
+                    </a>
+                     before you can log into CCH® AnswerConnect.
+                </p>
+            </div>
+            #end
+            <form class="wk-login-form" name="loginFrom" autocomplete="on" action="$url?cmd=auth" method="post">
+                <div class="ping-messages has-login-options" role="alert" tabindex="-1">
+                    <div style="display:none;" class="id-login-group id-login-error-message wk-alert-danger login-error-cont"></div>
+                </div>
+                <div class="id-login-group id-login-error-message wk-alert-danger" style="display: none;"></div>
+    
+                <div class="wk-layout-50-50">
+                    <div class="wk-layout-item">
+                        <div class="wk-login-form-container">
+                            <div class="wk-login-fields">
+                                <div class="wk-field-item userId-field-item">
+                                    <div class="wk-field-header">
+                                        <label for="username" class="id-login-input-label wk-username">Username:</label>
+                                    </div>
+                                    <input id="username"
+                                        class="id-login-input"
+                                        type="text"
+                                        size="36"
+                                        name="$escape.escape($name)"
+                                        aria-label="Email address"
+                                        autocorrect="off"
+                                        autocapitalize="off"
+                                        required
+                                        placeholder="Enter your username"
+                                        value="$escape.escape($username)"/>
+                                </div>
+    
+                                <div class="wk-field-item password-field-item">
+                                    <div class="wk-field-header">
+                                        <label for="password" class="id-login-input-label wk-password">Password:</label>
+                                    </div>
+                                    <input id="password" type="password" size="36" name="$escape.escape($pass)" required
+                                        value="$escape.escape($password)" class="id-login-input" placeholder="Enter your password" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="wk-layout-item">
+                        <div class="wk-login-options remember-me-option">
+                            <div class="wk-field-item">
+                                <div class="wk-checkbox-field">
+                                    <label>
+                                        <input id="rememberMe" type="checkbox" name="$rememberMe" $rememberUsernameChecked />
+                                        Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="wk-login-options forgot-password-option">
+                            <a class="forgot-password-link secondary-link optional" href="javascript: void(0);">Forgot Password?</a>
+                        </div>
+    
+                        #if($isShowReenterEmail)
+                        <div class="wk-login-options re-enter-email-option">
+                            <div class="wk-field-item">
+                                <a class="secondary-link" href="$baseAuthUrl&reset=true">Re-enter email here</a>
+                            </div>
+                        </div>
+                        #end
+                    </div>
+                </div>
+    
+                <button class="id-login-button wk-button-primary wk-button-full" type="submit">
+                    <span>Log in</span>
+                </button>
+            </form>
+    
+            <form class="wk-login-form forgot-password-form" action="$url" style="display: none;">
+                <div class="wk-alert-danger error forgot-password-error"
+                     style="display: none;"
+                     role="alert"
+                     tabindex="-1">
+                    <div class="login-form-msg">
+                        We are sorry. You cannot access or change your password. Please contact your account administrator for assistance.
+                    </div>
+                </div>
+                <div class="info-message">
+                    <div class="login-form-msg">To reset your password, please enter your email address:</div>
+                </div>
+                <div class="wk-field-item restore-pwd-input-cont">
+                    <input type="email"
+                           name="email" auto-focus=""
+                           required
+                           id="forgotPasswordEmail"
+                           aria-label="To reset your password, please enter your email address"
+                           placeholder="you@example.com">
+                </div>
+                <div class="restore-pwd-success-messages" style="display: none;">
+                    <div class="login-form-msg">Please check your email. You will receive an email from us with password reset instructions. If you do not receive an email, check your spam folder or contact Customer Support at <b>1-800-344-3734</b>.</div>
+                </div>
+                <div class="wk-button-bar">
+                    <button type="submit" class="wk-button-full forgot-password-submit">Reset password</button>
+                    <button type="button" class="wk-button-secondary back-to-login" id="gotoLogin">Cancel</button>
+                </div>
+            </form>
+        </main>
+        <footer class="wk-login-footer">
+    <p class="wk-copyright-text">
+        &copy;<span class="current-year"></span>
+        <span>Wolters Kluwer. All rights reserved. Subject to </span>
+        <a href="//researchhelp.cch.com/License_Agreement.htm" target="_blank" rel="nofollow">
+            <span>Terms &amp; Conditions.</span>
+        </a>
+        <br />
+        <span>Version: 5.3.7</span>
+    </p>
+</footer>
+<script>
+    const currentYearForVelocity = '$localDateTime.getYear()';
+    const currentYearForEjs = '<&= currentYear &>';
+    const currentYear = isFinite(currentYearForVelocity) ? currentYearForVelocity : currentYearForEjs;
+    const currentYearElement = document.querySelector('.current-year');
+
+    currentYearElement.innerText = currentYear;
+</script>
+    </div>
+</div>
+<script type="text/javascript" src="./assets/ac/js/login.js"></script>
+
+</body>
+</html>

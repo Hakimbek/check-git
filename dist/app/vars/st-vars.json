@@ -1,0 +1,208 @@
+{
+  "ui-host": "https://answerconnect-searchtuning.psdidevenvs.com",
+  "topicSetId": "ac-tlp2",
+  "mediaServer-host": "https://mediaserver-acqa.psdidevenvs.com",
+  "linkRouterCitationUrl": "https://intelliconnect-acqa.psdidevenvs.com/resource/scion/citation",
+  "idpOneIdUrl": "https://login.intelliconnect.stg.cch.com/",
+  "idpAxcessUrl": "https://stagelogin.cchaxcess.com",
+  "intelliConnect-host": "https://intelliconnect-acqa.psdidevenvs.com",
+  "spoolerFiles": {
+    "host": "spooler-acqa.psdidevenvs.com",
+    "path": "/spooler/files"
+  },
+  "logstash": {
+    "esindex": "gpo-ps-hub2-st-ac",
+    "level": "info",
+    "componentEnvironment": "ST",
+    "enable": true,
+    "region": "NA",
+    "tenant": "WKUS-TAL",
+    "clientId": "ANSWERCONNECT"
+  },
+  "mainSeoHost": "https://answerconnect-searchtuning.psdidevenvs.com",
+  "canonicalHostScePattern": "https://answerconnect-searchtuning.psdidevenvs.com/**",
+  "gpd": {
+    "host": "https://osa-acqa.psdidevenvs.com",
+    "content": "/gpd/document/WKUS-TAL-AC-GPD/",
+    "checkDoc": "/gpd/rest/checkDoc/WKUS-TAL-AC-GPD/",
+    "sitemaps": "/gpd/rest/sitemap/WKUS-TAL-AC-GPD/",
+    "sitemapFileName": "SiteMapIndex.xml"
+  },
+  "canada": {
+    "homePageURL": "https://answerconnect-canada-qa.psdidevenvs.com/api/1.0/protected/navigation/openHomePage?linksource=ACUS"
+  },
+  "velvet-apikey": "7FACC5945E414ED1B8DE72A96D5014F5",
+  "ICAdminUrl": "https://talcudvl.saas.wolterskluwertal.com/saas/",
+  "googleAnalyticsId": "UA-121730661-1",
+  "mouseflow": {
+    "enabled": true,
+    "srcUrl": "//cdn.mouseflow.com/projects/647dea29-d92b-4c88-a73e-e63838ceb91a.js",
+    "whiteListConfig": {
+      "matches": [
+        "^.+@cch\\.com$"
+      ],
+      "startsWith": [],
+      "contains": [],
+      "endsWith": []
+    }
+  },
+  "elpTopicSetId": "ac-iq-elp",
+  "cdnHost": "//researchhelp.cch.com",
+  "chatbotService": {
+    "url": "//ac-vr-2.psdidevenvs.com/api/suggest"
+  },
+  "googleOptimizeSetting": {
+    "isEnabled": true,
+    "container": "GTM-WKZH57H"
+  },
+  "welcomePageGetFreeBtnUrl": "//talcudvl.saas.wolterskluwertal.com/saas/manageEndUserProfileCreateACTrials.do",
+  "appcuesScript": "//fast.appcues.com/39130.js",
+  "server_infoEmailAdress": "noreply@psdidevenvs.com",
+  "server_freemiumUser": {
+    "credentials": {
+      "loginId": "acfreedev@cch.com",
+      "password": "acfreepass"
+    },
+    "updateTokenInterval": "1d",
+    "updateTokenAfterFailedInterval": "3m"
+  },
+  "debugStateTransitions": false,
+  "enableVelvetEventTracking": true,
+  "enableWkLogEventTracking": false,
+  "enableUserIdForWkLogEventTracking": true,
+  "referrerIC": {
+    "document": true,
+    "citation": true,
+    "linksource": true,
+    "icinteraction": true,
+    "cfu": true,
+    "cpid": true,
+    "query": true,
+    "searchid": true,
+    "tool": true
+  },
+  "welcomePageSeeInActionBtnUrl": "//www.cchanswerconnect.com/",
+  "internationalSignatoryAtsFilter": "ac-signatory-ats-filter!ATS_INTERNATIONAL",
+  "enableIntlNewsAlert": true,
+  "geolocation": {
+    "enabled": false,
+    "providerUrl": "http://api.ipstack.com/check?access_key=3e96dd2b5556194088082ed79b50fbb1&fields=country_code"
+  },
+  "wafParams": [
+    {
+      "name": "Deloitte",
+      "value": "Deloitte"
+    },
+    {
+      "name": "PwC",
+      "value": "urn:pwc:pwd:pwcppi:s"
+    },
+    {
+      "name": "KPMG",
+      "value": "https://msvcsstg1.us.kworld.kpmg.com/FIM/sps/idpstd/saml20"
+    },
+    {
+      "name": "E&Y",
+      "value": "EYIDaaSUAT"
+    }
+  ],
+  "newsAlertsAddMissingJurisdictionsFormSharedJurisdictionATS": true,
+  "externalTopicSections": [
+    "Smart Charts",
+    "Practice Aids"
+  ],
+  "usedPreferences": {
+    "client": {
+      "searchTab": "answerconnect.search.lastTab",
+      "icToAcRedirect": "taa.ic.redirect-to-ac",
+      "usCaUser": "userprefs.answerconnect.home.idp",
+      "personalFolders": "answerconnect.research-folders.personal-folders",
+      "annotationsNotes": "answerconnect.annotations.notes",
+      "saveToAxcess": "answerconnect.save-to-axcess",
+      "lastUsedTradingSymbols": "userprefs.ARMAC.lastUsedTradingSymbols",
+      "lastUsedTradingSymbolsCDL": "userprefs.ARMAC.lastUsedTradingSymbolsCDL",
+      "lastUsedTradingSymbolsESG": "userprefs.ARMAC.lastUsedTradingSymbolsESG",
+      "bspAwareness": "answerconnect.bspawareness.enabled"
+    },
+    "common": {
+      "licenseKey": "answerconnect.license.agreement.accepted"
+    }
+  },
+  "licenseAgreementValue": "true",
+  "csn.support": {
+    "assistanceEmail": "CCH-ACSupport@wolterskluwer.com",
+    "assistancePhone": "800-335-2079",
+    "browserSearchPlugin": "//cchconnect.cch.com/icsearchsso/install.aspx",
+    "training": "https://taxna.wolterskluwer.com/training/tax-research",
+    "email": "CCH-ACSupport@wolterskluwer.com",
+    "feedbackUrl": "//taxsurveys.qualtrics.com/SE/?SID=SV_bdAcWE0I73L54u9",
+    "hours": "",
+    "howToVideosRelativeLink": "/flashfiles/answerconnect/index.html",
+    "phoneResearch": "1-800-344-3734",
+    "phoneIssues": "1-800-835-0105",
+    "helpCenter": "https://cch-answerconnect.groovehq.com/help",
+    "guidedWalkthroughs": "https://cch-answerconnect.groovehq.com/help/guided-walkthroughs",
+    "newFeatures": "https://cch-answerconnect.groovehq.com/help/new-features",
+    "serviceEmail": "CCHCustomerService@wolterskluwer.com",
+    "url": "//support.cch.com/ticket/",
+    "upsellPhone": "800-344-3734",
+    "customerServiceLink": "https://support.cch.com/chat/",
+    "callSupportText": "Call CCH Support at 1-800-344-3734",
+    "contactSupportLink": "//support.cch.com/contact/"
+  },
+  "osa": {
+    "url": "/osa/@@OSA-DOMAIN-NAME@@",
+    "appendTimestamp": true,
+    "sessionTimeoutInMinutes": 525600,
+    "sessionRefreshInMinutes": 1440
+  },
+  "osaProductConfig": {
+    "cheetah": {
+      "headers": {
+        "x-cpid": "WKUS-Legal-Cheetah"
+      }
+    },
+    "default": {
+      "clientInfo": {
+        "clientId": "ac",
+        "version": 1,
+        "originip": 1
+      },
+      "headers": {
+        "x-cpid": "WKUS-TAA-AC"
+      }
+    }
+  },
+  "gpoLinkRouterDomain": "http://talcudvl.resource.wolterskluwertal.com",
+  "latestVersionOfLicenseAgreementTextUrl": "/service/public/proxy/getLatestVersionOfLicenseAgreementText",
+  "pardotSettings": {
+    "enabled": false
+  },
+  "enableEventTracking": true,
+  "redisHost": {
+    "hostName": "master.ac-redis-dev.bavg8t.use1.cache.amazonaws.com",
+    "port": "6379"
+  },
+  "reactVisitedLinksStorageName": "visited_links_storage_react",
+  "alfreskoEndpointLink": "https://int-alfresco-ltbna-us-ltbnauat-apl.wkisatsysops.net/alfresco/s/wk/workspace/document-details?id=",
+  "searchFiltersCacheStorageName": "search_filters_cache",
+  "reactScrollPositionsStorageName": "scroll_positions_storage",
+  "sequenceIdStorageName": "sequenceId",
+  "lastVisitedSearchTabSessionStorageKey": "lastVisitedSearchTab",
+  "lastExecutedSearchSessionStorageKey": "lastExecutedSearch",
+  "openSearchResultInNewTabIsActiveKey":"openResultInNewTabIsActive",
+  "thesaurusIsActiveKey":"thesaurusIsActive",
+  "smartChartsDataStorageName": "smartcharts_data",
+  "lastSearchQueryStorageName": "lastSearchQuery",
+  "server_arm": {
+    "ktmine_host": "https://apistg.ktmine.com",
+    "license_api_host": "https://stagingplatformservices.wolterskluwerhealth.com"
+  },
+  "permanentEstablishmentToolUrl": "https://pe-stg.wolterskluwer.com/",
+  "baseEdgeServicesUrl": "/service/edge/services/modular",
+  "taskflowUrl": "https://fdca-stg.pubrepl.tfprod.app",
+  "bspExtensionId": "agjllilkfmeenedgenekghidiajlkcip",
+  "beyond": {
+    "workspaceId": "answerconnect-staging"
+  }
+}

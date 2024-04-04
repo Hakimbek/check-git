@@ -1,0 +1,105 @@
+services:
+    default:
+        autoScaling:
+            max:
+                feature: 1
+                release: 4
+            min:
+                feature: 1
+                release: 2
+            cpuThreshold: 70
+            memoryThreshold: 70
+            lowCpuThreshold: 30
+            lowMemoryThreshold: 50
+        memory:
+            release: 2048
+            feature: 512
+        cpu:
+            release: 1024
+            feature: 256
+
+logs:
+    type: logstash
+    host: nonprd-li-logstash.wkgposvc.cloud
+    port: '444'
+    index: gpo-ps-hub2-taltst-ac
+    clientId: ANSWERCONNECT
+    tls: On
+    tlsVerify: Off
+
+containers:
+    csn:
+        build: '.'
+        environment:
+            env: tal-tst
+            PORT: 8005
+            REDIS_AUTH_APPLICATION: { type: ssm, path: /REDIS_AUTH_APPLICATION/TAL-TST }
+            AXCESS_INTEGRATOR_KEY: { type: ssm, path: /AXCESS_INTEGRATOR_KEY/PROD }
+            ARMAC_KTMINE_KEY: { type: ssm, path: /ARMAC_KTMINE_KEY/PROD }
+            ARMAC_LICENSE_API_KEY: { type: ssm, path: /LICENSE_SERVICE/PROD }
+            AWS_BRAND_LOGO_BUCKET_ACCESS_KEY: { type: ssm, path: /BRAND_LOGOS_S3_BUCKET_ACCESS_KEY/STG }
+            AWS_BRAND_LOGO_BUCKET_SECRET_KEY: { type: ssm, path: /BRAND_LOGOS_S3_BUCKET_SECRET_KEY/STG }
+            AWS_AXCESS_BUCKET_ACCESS_KEY: { type: ssm, path: /AXCESS_COMPLEXITY_FACTORS_AWS_BUCKET_ACCESS_KEY/STG }
+            AWS_AXCESS_BUCKET_SECRET_KEY: { type: ssm, path: /AXCESS_COMPLEXITY_FACTORS_AWS_BUCKET_SECRET_KEY/STG }
+            AWS_EDWARD_JONES_COUPON_CODES_KEY: { type: ssm, path: /EDWARD_JONES_COUPON_CODES/STG }
+            AWS_BEYOND_API_KEY: { type: ssm, path: /BEYOND_API_KEY/STG }
+
+    gateway:
+        environment:
+            ############## ENVIRONMENT IS DELETED ##############
+            ################## TO BE REMOVED ###################
+            
+            freemium_default_password: { type: ssm, path: /FREEMIUM_PASSWORD/TAL-TST }
+            freemium_freeuser_password: { type: ssm, path: /FREEMIUM_PASSWORD/TAL-TST }
+            freemium_gpduser_password: { type: ssm, path: /FREEMIUM_GPD_PASSWORD/TAL-TST }
+            authorization_protected_condition: tokenPayload/sub=4eef240a2d8764bb4eecdb7fddd995fbb0386c2e&httpCookie/previously_logged_in=true
+            OSA_URL: services.wktaltst.com/@@OSA-DOMAIN-NAME@@.svc
+            REDIS_HOST: master.acr1kr2t28rhzssc.m1jyld.use1.cache.amazonaws.com:6379
+            REDIS_AUTH: { type: ssm, path: /REDIS_AUTH_GATEWAY/TAL-TST }
+            REDIS_KEY_PREFIX: taltst
+            idp_OneID_end_session_endpoint: https://login.wktaltst.com/as/authorization.oauth2?client_id=TAA.AnswerConnect&response_type=code&logout=true
+            idp_OneID: https://login.wktaltst.com
+            idp_OneID_relogin_parameters: logout_uri=https://answerconnect-tst.lynx-app.com/static/logout&redirect_uri=https://answerconnect-tst.lynx-app.com/static/logout
+            idp_OneID_client_id: TAA.AnswerConnect
+            idp_OneID_client_secret: { type: ssm, path: /IDP_ONEID_CLIENT_SECRET/TAL-TST }
+            service_velvet_url: velvet-tst.wk-onega.com
+            service_osashortify_url: linkrouter-nonprod.msc-stg.wkgposvc.cloud/TALDVL/Shortify.svc/
+            service_osauseractivityhistory_url: https://ga-na-cs-ars-nastg.stg-na-onega.wkgposvc.cloud/NASTG/Useractivityhistory.svc/
+            idp_AxcessIDP: https://login.cchaxcess.com/
+            idp_AxcessIDP_client_id: TAA.AnswerConnect.PROD
+            idp_AxcessIDP_client_secret: { type: ssm, path: /IDP_AXCESSIDP_CLIENT_SECRET/PROD }
+            service_axcessdocument_url: https://api.cchaxcess.com/api/DocumentService
+
+            # env specific configs for
+            # osa services available with token exchange (should be requested from server side only):
+            # env is dead?
+            service_privateurm_url: http://services.wktaltst.com/Urm.svc
+            idp_tokenexchange: https://login.wktaltst.com
+            idp_tokenexchange_client_id: TAA.ACSTS
+            idp_tokenexchange_client_secret: { type: ssm, path: /IDP_ONEID_EXCHANGE_TOKEN_SECRET/PROD }
+
+            # taskflow token exchange config
+            service_tf_url: https://fdca-stg.pubrepl.tfprod.app
+            idp_oneidtokenexchangetfidp: https://login.wktaltst.com
+            idp_oneidtokenexchangetfidp_client_id: TAA.AC2TaskFlow
+            idp_oneidtokenexchangetfidp_client_secret: { type: ssm, path: /IDP_ONEID_TASKFLOW_CLIENT_SECRET/STG }
+
+            # ARMAC-968 search wnc outside subscription # for taltst env - it might not work
+            idp_wncidp: https://login.wktaltst.com/
+            idp_wncidp_client_id: TAAUS.AnswerConnect-wnc.PRD
+            idp_wncidp_client_secret: { type: ssm, path: /IDP_ONEID_CC_WNC_SECRET/PROD }
+            service_wnc_url: http://services.wktaltst.com/Research.svc
+            # end ARMAC-968
+
+network:
+    vpcId: vpc-0c99c14efea870a86
+    publicSubnets:
+      - subnetId: subnet-05249bbc8f94fcfaa
+        availabilityZone: us-east-1a
+      - subnetId: subnet-0309b93bcbdee2354
+        availabilityZone: us-east-1b
+    privateSubnets:
+      - subnetId: subnet-0f8fa1e16fba9d8af
+        availabilityZone: us-east-1a
+      - subnetId: subnet-096f21201ed1d9f82
+        availabilityZone: us-east-1b

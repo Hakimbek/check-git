@@ -1,0 +1,300 @@
+body {
+    background: #fff;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wk-header .wk-logo-large {
+    height: 1.8125rem;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+    height: auto;
+    max-width: 100%;
+    border: 0;
+}
+
+body, html {
+    color: #474747;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.wk-login-screen {
+    background-color: #fff;
+    bottom: 0;
+    color: #474747;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.wk-header {
+    background-color: #fff;
+    width: 100%;
+}
+
+.wk-header>.wk-header-container {
+    max-width: 118.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.wk-header>.wk-header-container:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.wk-header .wk-logo {
+    display: block;
+    width: 190px;
+}
+
+.wk-login-screen .wk-header .wk-product-brand {
+    font-size: 24px;
+    font-weight: 500;
+    color: #85bc20;
+    display: block;
+    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    margin: .625rem .9375rem;
+}
+
+.wk-login-screen .wk-header .wk-product-brand .product-app-name-extra {
+    font-style: italic;
+    color: #a4cd58;
+}
+
+.product-brand::after {
+    content: '\00AE';
+    font-size: .6667em;
+    position: relative;
+    top: -.3em;
+}
+
+a {
+    cursor: pointer;
+    color: #007ac3;
+    text-decoration: none;
+    transition: color .1s ease-out;
+    background-color: transparent;
+}
+
+a:active, a:focus, a:hover, a:visited {
+    text-decoration: none;
+}
+
+h2 {
+    line-height: 1.1;
+    font-weight: 700
+}
+
+::selection {
+    background-color: #C7E4AA;
+}
+
+.wk-welcome-layout {
+    padding-top: 4.6875rem;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper {
+    max-width: 48.75rem;
+    margin: 0 auto;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-welcome-content {
+    border: 1px solid #dadada;
+    padding: 11px 370px 21px 25px;
+    min-height: 13.125rem;
+    box-sizing: border-box;
+    background: url(/static/img/welcome-page-bg.jpg) top right no-repeat;
+    margin-bottom: 1.875rem;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-welcome-content .page-info {
+    font-family: Franziska, "Times New Roman", Times,serif;
+    font-style: italic;
+    font-size: 1.4375rem;
+    font-weight: 600;
+    color: #474747;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-welcome-content .wk-product-brand {
+    color: #251968;
+    font-size: 1.9375rem;
+    margin-top: 0;
+    margin-bottom: .6875rem;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-welcome-content .wk-product-brand .product-app-name {
+    display: inline-block;
+    padding-top: 9px;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-welcome-content .wk-product-brand .product-app-name-extra {
+    font-style: italic;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-welcome-content p {
+    font-size: .9375rem;
+    display: inline-block;
+    margin-top: -4px;
+}
+
+.wk-button-bar {
+    max-width: 118.75rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wk-button-bar:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-button-bar .wk-welcome-buttons-info {
+    display: inline-block;
+    padding-top: .375rem;
+    color: #251968;
+    font-size: 1.125rem;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-button {
+    padding-left: 3.125rem;
+    padding-right: 3.125rem;
+
+    outline-color: #000000;
+}
+
+a.wk-button {
+    display: block;
+    text-align: center;
+}
+
+.wk-button {
+    font-size: .9375rem;
+    padding: .75rem .5625rem .6875rem;
+}
+
+.wk-button {
+    transition: background-color .1s ease-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #007ac3;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: .9375rem;
+    padding: .75rem .5625rem .6875rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 1rem;
+    -webkit-tap-highlight-color: transparent;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    width: 100%;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-button-bar .wk-welcome-buttons-login {
+    margin-top: 2.5rem;
+}
+
+.wk-welcome-layout .wk-welcome-wrapper .wk-button-bar .wk-welcome-buttons-login .wk-welcome-buttons-login-link:after {
+    content: "\00bb";
+}
+
+.wk-logo-large {
+    display: none;
+}
+
+@media (min-width: 1900px) {
+    .wk-button-bar {
+        max-width: 1860px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .wk-button-bar {
+        max-width: 1360px!important;
+    }
+}
+
+@media (max-width: 780px) {
+    .wk-welcome-layout .wk-welcome-wrapper {
+        width: 100%;
+    }
+
+    .wk-welcome-layout .wk-welcome-wrapper .wk-welcome-content {
+        background: 0 0;
+        padding: 1.5625rem 1.75rem;
+    }
+}
+
+@media (min-width: 37.5rem) {
+    .wk-logo-small {
+        display: none;
+    }
+
+    .wk-logo-large {
+        display: block;
+    }
+
+    .wk-header>.wk-header-container {
+        padding: .5625rem 1rem;
+    }
+
+    .wk-login-screen .wk-header .wk-logo {
+        float: left;
+    }
+
+    .wk-header .wk-logo {
+        margin: .71875rem 0;
+    }
+
+    .wk-login-screen .wk-header .wk-product-brand {
+        float: right;
+        margin: 1.625rem 0 0;
+    }
+
+    .wk-button-bar .wk-button-group-right {
+        float: right;
+    }
+
+    .wk-button-bar .wk-button {
+        float: left;
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+
+    a.wk-button {
+        display: inline-block;
+    }
+
+    .wk-button {
+        display: inline-block;
+        margin-bottom: 0;
+        width: auto;
+    }
+}

@@ -1,0 +1,3 @@
+exports.redirectMap = {
+    '/tools': '/tools',
+};

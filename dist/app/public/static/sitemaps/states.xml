@@ -1,0 +1,24 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://answerconnect.cch.com/</loc>
+        <lastmod>2018-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://answerconnect.cch.com/topics/browse/all</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://answerconnect.cch.com/topics/browse/federal/list</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://answerconnect.cch.com/topics/browse/state/list</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://answerconnect.cch.com/browse/categories-horizontal/csh-da-filter!WKUS-TAL-DOCS-PHC-%7Bb3d4b2b5-b65c-3cb4-9c24-f916cf4f0707%7D</loc>
+        <priority>0.5</priority>
+    </url>
+</urlset>

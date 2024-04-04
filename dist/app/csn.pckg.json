@@ -1,0 +1,46 @@
+{
+  "name": "csn",
+  "type": "product",
+  "version": "9.3.3",
+  "build": {
+    "scss": {
+      "dist": "app/css",
+      "src": ["./scss/index.scss", "./app/**/*.scss", "./scss/_*.scss", "!./scss/fundamentals-index.scss"],
+      "includePaths": [
+        "img/",
+        "./node_modules/@wk/wk-css/src/wk-components/",
+        "./node_modules/@wk/wk-css/src/",
+        "./node_modules/@wk/wk-fonts/dist/fonts/",
+        "./node_modules/@wk/wk-fonts/dist/",
+        "./node_modules/@wk/wk-fonts/src/",
+        "./node_modules/@wk/wk-sass-utils/src",
+        "./node_modules/@wk/wk-sass-utils/node_modules/susy/sass",
+        "./node_modules/modularscale-sass/stylesheets",
+        "./node_modules/@wk/wk-css-tree/src/components/tree",
+        "./node_modules/@wk/wk-css-tree/src",
+        "./node_modules/bootstrap-sass/assets/stylesheets/",
+        "./node_modules/susy/sass",
+        "./node_modules/breakpoint-sass/stylesheets"
+      ],
+      "resourcePaths": [
+        "./app/img/",
+        "./app/fonts/",
+        "./node_modules/wk-css/src/wk-components/fonts/",
+        "./node_modules/@wk/wk-fonts/dist/fonts/",
+        "./node_modules/font-awesome/",
+        "./node_modules/flag-icon-css/"
+      ],
+      "autoPrefixer": true
+    }
+  },
+  "engines": {
+    "node": "16.17.0",
+    "npm": "8.15.0"
+  },
+  "publish": {
+    "contentInclude": ["**/**", "*.*", "!node_modules/**", "!**/.git/**", "!**/.idea/**", "!.bmbrefs"]
+  },
+  "release": {
+    "contentInclude": ["**/**", "*.*", "!node_modules/**", "!**/.git/**", "!**/.idea/**", "!.bmbrefs"]
+  }
+}

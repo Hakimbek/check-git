@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /osaRedirect
+Disallow: /resolve/citation/
+Sitemap: https://answerconnect.cch.com/sitemap.xml

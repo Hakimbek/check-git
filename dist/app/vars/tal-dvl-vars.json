@@ -1,0 +1,190 @@
+{
+  "ui-host": "https://answerconnect.dvl.lynx-app.com",
+  "topicSetId": "ac-dvl-tlp",
+  "mediaServer-host": "https://ic-us.taldvl.psdidevenvs.com",
+  "linkRouterCitationUrl": "https://ic-us.taldvl.psdidevenvs.com/scion/citation",
+  "idpOneIdUrl": "https://oneid.taldvl.psdidevenvs.com/",
+  "idpAxcessUrl": "https://stagelogin.cchaxcess.com",
+  "intelliConnect-host": "https://ic-us.taldvl.psdidevenvs.com",
+  "spoolerFiles": {
+    "host": "us-spooler.taldvl.psdidevenvs.com",
+    "path": "/spooler/files"
+  },
+  "logstash": {
+    "esindex": "gpo-ps-hub2-taldvl-ac",
+    "level": "info",
+    "componentEnvironment": "TALDVL",
+    "enable": true,
+    "region": "NA",
+    "tenant": "WKUS-TAL",
+    "clientId": "ANSWERCONNECT"
+  },
+  "mainSeoHost": "https://answerconnect.dvl.lynx-app.com",
+  "canonicalHostScePattern": "https://answerconnect.dvl.lynx-app.com/**",
+  "gpd": {
+    "host": "https://gpd.taldvl.psdidevenvs.com",
+    "content": "/gpd/document/WKUS-TAL-AC-GPD/",
+    "checkDoc": "/gpd/rest/checkDoc/WKUS-TAL-AC-GPD/",
+    "sitemaps": "/gpd/rest/sitemap/WKUS-TAL-AC-GPD/",
+    "sitemapFileName": "SiteMapIndex.xml"
+  },
+  "canada": {
+    "homePageURL": "https://answerconnect-canada.dvl.lynx-app.com/api/1.0/protected/navigation/openHomePage?linksource=ACUS"
+  },
+  "wafParams": [
+    {
+      "name": "Deloitte",
+      "value": "Deloitte"
+    },
+    {
+      "name": "PwC",
+      "value": "urn:pwc:pwd:pwcppi:s"
+    },
+    {
+      "name": "KPMG",
+      "value": "https://msvcsstg1.us.kworld.kpmg.com/FIM/sps/idpstd/saml20"
+    },
+    {
+      "name": "E&Y",
+      "value": "EYIDaaSUAT"
+    }
+  ],
+  "velvet-apikey": "716914D1C5E345AEBDF8BAB571BCE3FF",
+  "ICAdminUrl": "https://talcudvl.saas.wolterskluwertal.com/saas/",
+  "googleAnalyticsId": "UA-121730661-1",
+  "mouseflow": {
+    "enabled": true,
+    "srcUrl": "//cdn.mouseflow.com/projects/647dea29-d92b-4c88-a73e-e63838ceb91a.js",
+    "whiteListConfig": {
+      "matches": [
+        "acfreedev@cch\\.com",
+        "acsuperdisco1@cch\\.com"
+      ],
+      "startsWith": [],
+      "contains": [],
+      "endsWith": []
+    }
+  },
+  "elpTopicSetId": "ac-dvl-elp",
+  "cdnHost": "//researchhelp.tst.cch.com",
+  "chatbotService": {
+    "url": "//ac-vr-2.psdidevenvs.com/api/suggest"
+  },
+  "googleOptimizeSetting": {
+    "isEnabled": true,
+    "container": "GTM-WKZH57H"
+  },
+  "welcomePageGetFreeBtnUrl": "//talcudvl.saas.wolterskluwertal.com/saas/manageEndUserProfileCreateACTrials.do",
+  "appcuesScript": "//fast.appcues.com/35874.js",
+  "server_infoEmailAdress": "noreply@psdidevenvs.com",
+  "server_freemiumUser": {
+    "credentials": {
+      "loginId": "acfreedev@cch.com",
+      "password": "acfreepass"
+    },
+    "updateTokenInterval": "1d",
+    "updateTokenAfterFailedInterval": "3m"
+  },
+  "usedPreferences": {
+    "client": {
+      "searchTab": "answerconnect.search.lastTab",
+      "icToAcRedirect": "taa.ic.redirect-to-ac",
+      "usCaUser": "userprefs.answerconnect.home.idp",
+      "personalFolders": "answerconnect.research-folders.personal-folders",
+      "annotationsNotes": "answerconnect.annotations.notes",
+      "saveToAxcess": "answerconnect.save-to-axcess",
+      "lastUsedTradingSymbols": "userprefs.ARMAC.lastUsedTradingSymbols",
+      "lastUsedTradingSymbolsCDL": "userprefs.ARMAC.lastUsedTradingSymbolsCDL",
+      "lastUsedTradingSymbolsESG": "userprefs.ARMAC.lastUsedTradingSymbolsESG",
+      "bspAwareness": "answerconnect.bspawareness.enabled"
+    },
+    "common": {
+      "licenseKey": "answerconnect.license.agreement.accepted"
+    }
+  },
+  "licenseAgreementValue": "true",
+  "csn.support": {
+    "assistanceEmail": "CCH-ACSupport@wolterskluwer.com",
+    "assistancePhone": "800-335-2079",
+    "browserSearchPlugin": "//cchconnect.cch.com/icsearchsso/install.aspx",
+    "training": "https://taxna.wolterskluwer.com/training/tax-research",
+    "email": "CCH-ACSupport@wolterskluwer.com",
+    "feedbackUrl": "//taxsurveys.qualtrics.com/SE/?SID=SV_bdAcWE0I73L54u9",
+    "hours": "",
+    "howToVideosRelativeLink": "/flashfiles/answerconnect/index.html",
+    "phoneResearch": "1-800-344-3734",
+    "phoneIssues": "1-800-835-0105",
+    "helpCenter": "https://cch-answerconnect.groovehq.com/help",
+    "guidedWalkthroughs": "https://cch-answerconnect.groovehq.com/help/guided-walkthroughs",
+    "newFeatures": "https://cch-answerconnect.groovehq.com/help/new-features",
+    "serviceEmail": "CCHCustomerService@wolterskluwer.com",
+    "url": "//support.cch.com/ticket/",
+    "upsellPhone": "800-344-3734",
+    "customerServiceLink": "https://support.cch.com/chat/",
+    "callSupportText": "Call CCH Support at 1-800-344-3734",
+    "contactSupportLink": "//support.cch.com/contact/"
+  },
+  "osa": {
+    "url": "/osa/@@OSA-DOMAIN-NAME@@",
+    "appendTimestamp": true,
+    "sessionTimeoutInMinutes": 525600,
+    "sessionRefreshInMinutes": 1440
+  },
+  "osaProductConfig": {
+    "cheetah": {
+      "headers": {
+        "x-cpid": "WKUS-Legal-Cheetah"
+      }
+    },
+    "default": {
+      "clientInfo": {
+        "clientId": "ac",
+        "version": 1,
+        "originip": 1
+      },
+      "headers": {
+        "x-cpid": "WKUS-TAA-AC"
+      }
+    }
+  },
+  "gpoLinkRouterDomain": "http://talcudvl.resource.wolterskluwertal.com",
+  "latestVersionOfLicenseAgreementTextUrl": "/service/public/proxy/getLatestVersionOfLicenseAgreementText",
+  "pardotSettings": {
+    "enabled": false
+  },
+  "enableEventTracking": true,
+  "redisHost": {
+    "hostName": "master.ac-redis-dev.bavg8t.use1.cache.amazonaws.com",
+    "port": "6379"
+  },
+  "offplatformSmartchartsLink": "https://smartcharts.talcudvl.cch.com/smartcharts/default.aspx",
+  "reactVisitedLinksStorageName": "visited_links_storage_react",
+  "alfreskoEndpointLink": "https://int-alfresco-ltbna-us-ltbnauat-apl.wkisatsysops.net/alfresco/s/wk/workspace/document-details?id=",
+  "searchFiltersCacheStorageName": "search_filters_cache",
+  "reactScrollPositionsStorageName": "scroll_positions_storage",
+  "sequenceIdStorageName": "sequenceId",
+  "lastVisitedSearchTabSessionStorageKey": "lastVisitedSearchTab",
+  "lastExecutedSearchSessionStorageKey": "lastExecutedSearch",
+  "openSearchResultInNewTabIsActiveKey":"openResultInNewTabIsActive",
+  "thesaurusIsActiveKey":"thesaurusIsActive",
+  "smartChartsDataStorageName": "smartcharts_data",
+  "lastSearchQueryStorageName": "lastSearchQuery",
+  "server_arm": {
+    "ktmine_host": "https://apistg.ktmine.com",
+    "license_api_host": "https://stagingplatformservices.wolterskluwerhealth.com"
+  },
+  "server_elasticApm": {
+    "elasticApmServerUrl": "https://li-na-stg-apm.wkgposvc.cloud",
+    "serviceName": "ACUS",
+    "elasticApmGlobalLabels": "department=taa,region=na,componentGroup=app",
+    "elasticEnvironment": "acdvl"
+  },
+  "permanentEstablishmentToolUrl": "https://pe-stg.wolterskluwer.com/",
+  "baseEdgeServicesUrl": "/service/edge/services/modular",
+  "taskflowUrl": "https://fdca-stg.pubrepl.tfprod.app",
+  "bspExtensionId": "agjllilkfmeenedgenekghidiajlkcip",
+  "beyond": {
+    "workspaceId": "answerconnect-staging"
+  },
+  "arm_arm2link": "http://arm.dvl.lynx-app.com/"
+}

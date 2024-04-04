@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Login to CCH AnswerConnect | Wolters Kluwer</title>
+
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="cleartype" content="on" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=0, viewport-fit=cover" />
+<meta name="description" content="A comprehensive Federal, State &amp; International tax resource that you can trust to provide you with answers to your most important tax questions." />
+<meta name="robots" content="noindex, nofollow" />
+<base href="/"/>
+
+<meta name="application-name" content="CCH AnswerConnect" />
+<meta name="apple-mobile-web-app-title" content="CCH AnswerConnect" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+<meta name="application-name" content="CCH AnswerConnect" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-square70x70logo" content="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand-wheel.svg" />
+<meta name="msapplication-square150x150logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<meta name="msapplication-wide310x150logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<meta name="msapplication-square310x310logo" content="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+<link rel="icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/favicon.png" />
+<link rel="apple-touch-icon" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+<link rel="apple-touch-startup-image" href="//cdn.wolterskluwer.io/wk-logos/1.0.x/apple-touch-icon.png" />
+
+<link rel="canonical" href="" />
+
+
+    
+    
+        <link href="//cdn.wolterskluwer.io/wk-css/0.x.x/standard.min.css" type="text/css" rel="stylesheet">
+    
+    <link href="./assets/ac/css/idp-selector.page.css" type="text/css" rel="stylesheet">
+</head>
+<body id="body">
+<div class="wk-login-screen authorization-page">
+    <header class="wk-header">
+    <div class="wk-header-container">
+        <div>
+            <a class="wk-logo"  >
+                <img src="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand-small.svg" alt="CCH® AnswerConnect" class="wk-logo-small">
+                <img src="//cdn.wolterskluwer.io/wk/logos/1.1.x/wk-brand.svg" alt="CCH® AnswerConnect" class="wk-logo-large">
+            </a>
+        </div>
+        <div class="wk-product-brand">
+            <span class="product-brand">CCH</span>
+            <span class="product-app-name">Answer</span><span class="product-app-name-extra">Connect</span>
+        </div>
+    </div>
+</header>
+
+    <div class="wk-login-layout-options">
+        <main>
+            <div class="authorization-form-wrapper">
+                <form id="loginFrom"
+                    class="authorization-form row"
+                    name="loginFrom"
+                    action="$url"
+                    method="post">
+                    <label>
+                        <p class="label">Enter the <b>email address</b> you use to log in to CCH AnswerConnect</p>
+                        <input id="userId"
+                            type="text"
+                            name="$escape.escape($userId)"
+                            placeholder="you@example.com"
+                            aria-label="Email address"
+                            required
+                            value="$escape.escape($username)"/>
+                    </label>
+                    <p class="hint">If you access CCH AnswerConnect directly through your firm's site, enter your <b>work/firm email address</b>.</p>
+                    <button class="wk-button-primary wk-button-full" type="submit">Continue</button>
+                </form>
+            </div>
+        </main>
+        <footer class="wk-login-footer">
+    <p class="wk-copyright-text">
+        &copy;<span class="current-year"></span>
+        <span>Wolters Kluwer. All rights reserved. Subject to </span>
+        <a href="//researchhelp.cch.com/License_Agreement.htm" target="_blank" rel="nofollow">
+            <span>Terms &amp; Conditions.</span>
+        </a>
+        <br />
+        <span>Version: 5.3.7</span>
+    </p>
+</footer>
+<script>
+    const currentYearForVelocity = '$localDateTime.getYear()';
+    const currentYearForEjs = '<&= currentYear &>';
+    const currentYear = isFinite(currentYearForVelocity) ? currentYearForVelocity : currentYearForEjs;
+    const currentYearElement = document.querySelector('.current-year');
+
+    currentYearElement.innerText = currentYear;
+</script>
+    </div>
+</div>
+
+<script src="./assets/ac/js/idp-selector.js"></script>
+
+</body>
+</html>

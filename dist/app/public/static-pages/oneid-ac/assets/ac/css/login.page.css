@@ -1,0 +1,170 @@
+.ie-placeholder {
+    position: absolute;
+    top: 40px;
+    left: 18px;
+    color: #a9a9a9;
+    pointer-events: none;
+}
+.ie-placeholder.forgot-password-email-ph {
+    top: 14px;
+}
+.wk-login-screen .wk-login-footer .wk-copyright-text {
+    color: #474747;
+}
+.secondary-link {
+    color: #005B92;
+}
+.wk-icon-spinner {
+    font-size: 8em;
+}
+.preloader-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+}
+.login-preloader {
+    margin-top: 8%;
+}
+
+.wk-login-screen .wk-header .wk-product-brand {
+    font-size: 24px;
+    font-weight: 500;
+    color: #85bc20;
+}
+
+.product-brand::after {
+    content: '\00AE';
+    font-size: .6667em;
+    position: relative;
+    top: -.3em;
+}
+
+.product-app-name-extra {
+    font-style: italic;
+    color:#a4cd58;
+}
+
+.wk-alert-danger {
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.6rem;
+}
+
+.wk-alert-danger a {
+    color: #007ac3;
+}
+
+.wk-field-item {
+    margin-bottom: 1.4rem;
+}
+
+.re-enter-email-option,
+.remember-me-option,
+.forgot-password-option {
+    padding-left: 0.2rem;
+}
+
+@media (min-width: 37.5rem) {
+    .wk-login-screen .wk-login-layout .wk-login-form {
+        max-width: 37.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .wk-login-screen .wk-login-layout .forgot-password-form {
+        max-width: 31.7rem;
+        padding-bottom: 0;
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+    }
+
+    .wk-login-screen .wk-login-layout .wk-login-footer,
+    .wk-login-screen .wk-login-layout .self-registration-guide {
+        max-width: 37.5rem;
+    }
+
+    .wk-login-options.remember-me-option {
+        margin-top: 2.6rem;
+    }
+
+    .wk-login-options.forgot-password-option {
+        margin-top: 3.8rem;
+    }
+
+    .wk-login-options.re-enter-email-option {
+        margin-top: 0.2rem;
+    }
+}
+
+.forgot-password-form .wk-button-bar {
+    text-align: center;
+}
+
+.forgot-password-form .back-to-login {
+    background-color: #ededed;
+    color: #005B92;
+    margin: 0 auto;
+    float: none;
+    padding-top: 0.9rem;
+}
+
+.forgot-password-form button.back-to-login:hover {
+    background-color: #ededed;
+}
+
+.forgot-password-form .wk-field-item {
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.forgot-password-form .wk-button-full.go-to-login {
+    margin-top: 0.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.restore-password .wk-login-screen footer.wk-login-footer{
+  max-width: 31.5rem;
+}
+
+.self-registration-guide {
+    border: solid #007ac3;
+    border-width: 0.0625rem 0.0625rem 0.0625rem 0.25rem;
+    color: #007ac3;
+    padding: 1rem 1.25rem 1rem 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.self-registration-guide .wk-icon-filled-info {
+    font-size: 1rem;
+    left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    top: 1rem;
+    position: absolute;
+}
+
+.self-registration-guide-title {
+    color: #353535;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0 0 0.25rem;
+}
+
+.self-registration-guide-content {
+    color: #232323;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.self-registration-link {
+    text-decoration: underline;
+}
